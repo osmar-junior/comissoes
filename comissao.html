@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comissão — TRE-RN</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --azul-escuro : #1a3a6b; --azul-medio  : #2563a8; --azul-claro  : #4a90d9;
+      --azul-fundo  : #eef3fa; --azul-borda  : #c8d8ec; --cinza-texto : #2c2c2c;
+      --cinza-leve  : #6b7280; --cinza-bg    : #f5f7fa; --cinza-linha : #e5e9f0;
+      --cinza-tag-bg: #f3f4f6; --branco      : #ffffff;
+      --verde       : #1a7a4a; --verde-bg    : #d4eddf;
+      --amarelo     : #b45309; --amarelo-bg  : #fef3c7;
+      --vermelho    : #b91c1c; --vermelho-bg : #fee2e2;
+      --fonte       : 'Segoe UI', Calibri, Arial, sans-serif;
+      --raio        : 6px; --raio-g      : 10px;
+      --sombra      : 0 2px 6px rgba(26,58,107,.09), 0 8px 24px rgba(26,58,107,.10);
+      --cor-com     : var(--azul-medio);
+    }
+    body { font-family:var(--fonte); background:var(--cinza-bg); color:var(--cinza-texto); font-size:14px; line-height:1.5; padding:16px 16px 48px; }
+    /* ── Voltar ── */
+    .pg-voltar { margin-bottom:12px; }
+    .btn-voltar { display:inline-flex; align-items:center; gap:5px; color:var(--cinza-leve); font-size:12.5px; font-weight:600; font-family:var(--fonte); text-decoration:none; padding:3px 0; transition:color .15s; }
+    .btn-voltar:hover { color:var(--azul-medio); }
+    /* ── Card moldura ── */
+    .card-moldura { background:var(--branco); border:2px solid #ccc; border-radius:var(--raio-g); box-shadow:var(--sombra); overflow:hidden; }
+    .card-topo { display:flex; }
+    .card-topo-esq { width:76px; flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:14px 10px; gap:0; }
+    .card-topo-sigla { font-size:15px; font-weight:900; letter-spacing:.12em; color:rgba(255,255,255,.98); text-align:center; line-height:1.2; text-transform:uppercase; }
+    .card-topo-div   { display:none; }
+    .card-topo-membros { display:none; }
+    .card-topo-lbl { display:none; }
+    .card-topo-dir { flex:1; display:flex; flex-direction:column; min-width:0; border-bottom:1px solid var(--cinza-linha); }
+    .card-topo-nome-faixa { padding:0 18px; flex:1; display:flex; flex-direction:column; justify-content:center; min-height:72px; }
+    .card-topo-nome { font-size:19px; font-weight:900; color:var(--azul-escuro); line-height:1.25; letter-spacing:-.01em; }
+    /* ── Abas ── */
+    .abas-nav { background:var(--branco); border-bottom:1px solid var(--cinza-linha); padding:0 18px; display:flex; overflow-x:auto; scrollbar-width:none; }
+    .abas-nav::-webkit-scrollbar { display:none; }
+    .aba-btn { padding:10px 14px; border:none; background:none; font-family:var(--fonte); font-size:13px; font-weight:500; color:var(--cinza-leve); cursor:pointer; border-bottom:2.5px solid transparent; margin-bottom:-1px; white-space:nowrap; transition:color .15s,border-color .15s; }
+    .aba-btn:hover { color:var(--azul-medio); }
+    .aba-btn.ativa { color:var(--azul-medio); border-bottom-color:var(--azul-medio); font-weight:600; }
+    .aba-conteudo { display:none; padding:18px 18px 28px; }
+    .aba-conteudo.ativa { display:block; animation:fadeIn .15s ease; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(-3px)} to{opacity:1;transform:translateY(0)} }
+    /* ── Seção ── */
+    .secao { margin-bottom:20px; }
+    .secao-titulo { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--cinza-leve); margin-bottom:10px; padding-bottom:5px; border-bottom:1px solid var(--cinza-linha); }
+    /* ── Fichas ── */
+    .fichas { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .ficha { background:var(--cinza-bg); border:1px solid var(--cinza-linha); border-left:3px solid var(--cinza-linha); border-radius:var(--raio); padding:8px 11px; }
+    .ficha.dest { border-left-color:var(--azul-medio); }
+    .ficha label { display:block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--cinza-leve); margin-bottom:2px; }
+    .ficha span { font-size:13px; color:var(--cinza-texto); font-weight:500; line-height:1.3; }
+    .ficha span small { display:block; font-size:11px; color:var(--cinza-leve); font-weight:400; }
+    .ficha.span2 { grid-column:span 2; }
+    /* ── Tabela composição ── */
+    .tabela-wrap { overflow-x:auto; border-radius:var(--raio); box-shadow:var(--sombra); }
+    table { width:100%; border-collapse:collapse; font-size:13px; background:var(--branco); }
+    thead th { background:var(--azul-fundo); color:var(--azul-escuro); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:8px 11px; text-align:left; border-bottom:1px solid var(--azul-borda); }
+    tbody td { padding:8px 11px; border-bottom:1px solid var(--cinza-linha); color:var(--cinza-leve); vertical-align:top; }
+    tbody tr:last-child td { border-bottom:none; }
+    tbody tr:hover td { background:var(--azul-fundo); }
+    tbody td:first-child { font-weight:600; color:var(--cinza-texto); }
+    .obs-badge { display:inline-block; background:var(--azul-fundo); color:var(--azul-medio); border:1px solid var(--azul-borda); border-radius:3px; padding:1px 7px; font-size:11px; font-weight:600; }
+    /* ── Normas timeline ── */
+    .norma-lista { display:flex; flex-direction:column; }
+    .norma-lista-item { display:flex; gap:12px; align-items:flex-start; padding:11px 0; border-bottom:1px solid var(--cinza-linha); }
+    .norma-lista-item:last-child { border-bottom:none; }
+    .norma-lista-orgao { flex-shrink:0; font-size:10.5px; font-weight:700; padding:3px 8px; border-radius:3px; letter-spacing:.04em; background:var(--azul-fundo); color:var(--azul-escuro); border:1px solid var(--azul-borda); white-space:nowrap; margin-top:1px; min-width:48px; text-align:center; }
+    .norma-lista-orgao.CNJ     { background:#e8f4ee; color:var(--verde);   border-color:#b8ddca; }
+    .norma-lista-orgao.TSE     { background:#fef3c7; color:var(--amarelo); border-color:#fcd97a; }
+    .norma-lista-orgao.LEI     { background:#fef3c7; color:var(--amarelo); border-color:#fcd97a; }
+    .norma-lista-orgao.DECRETO { background:#fef3c7; color:var(--amarelo); border-color:#fcd97a; }
+    .norma-lista-corpo { flex:1; }
+    .norma-lista-nome { font-size:13px; font-weight:600; color:var(--cinza-texto); margin-bottom:2px; }
+    .norma-lista-nome a { color:var(--azul-medio); text-decoration:none; }
+    .norma-lista-nome a:hover { text-decoration:underline; }
+    .norma-lista-desc { font-size:12px; color:var(--cinza-leve); }
+    .desig-timeline { display:flex; flex-direction:column; gap:0; padding-left:16px; }
+    .desig-tl-item { display:flex; gap:14px; position:relative; padding-bottom:18px; }
+    .desig-tl-item:last-child { padding-bottom:0; }
+    .desig-tl-item::before { content:''; position:absolute; left:-10px; top:10px; bottom:-4px; width:2px; background:var(--cinza-linha); }
+    .desig-tl-item:last-child::before { display:none; }
+    .desig-tl-dot { position:absolute; left:-15px; top:6px; width:12px; height:12px; border-radius:50%; border:2px solid var(--branco); box-shadow:0 0 0 2px var(--cinza-linha); z-index:1; }
+    .desig-tl-dot.vigente   { background:var(--verde); box-shadow:0 0 0 2px var(--verde); }
+    .desig-tl-dot.historico { background:var(--cinza-linha); }
+    .desig-tl-corpo { flex:1; padding-top:1px; }
+    .desig-tl-badge { display:inline-block; font-size:10px; font-weight:700; padding:1px 7px; border-radius:3px; margin-bottom:4px; }
+    .desig-tl-badge.vigente   { background:var(--verde-bg); color:var(--verde); }
+    .desig-tl-badge.historico { background:var(--cinza-tag-bg); color:var(--cinza-leve); }
+    .desig-tl-nome { font-size:13px; font-weight:600; color:var(--cinza-texto); margin-bottom:2px; }
+    .desig-tl-nome a { color:var(--azul-medio); text-decoration:none; }
+    .desig-tl-nome a:hover { text-decoration:underline; }
+    .desig-tl-desc { font-size:12px; color:var(--cinza-leve); }
+    /* ── Atas cards abertos ── */
+    .atas-ano-sep { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--cinza-leve); margin:24px 0 10px; padding-bottom:6px; border-bottom:2px solid var(--cinza-linha); display:flex; align-items:center; gap:8px; }
+    .atas-ano-sep:first-child { margin-top:0; }
+    .atas-ano-count { font-size:10px; font-weight:600; color:var(--branco); background:var(--cinza-leve); border-radius:10px; padding:1px 7px; letter-spacing:0; }
+    .ata-card-v2 { background:var(--branco); border:1px solid var(--cinza-linha); border-radius:var(--raio-g); box-shadow:var(--sombra); overflow:hidden; margin-bottom:12px; }
+    .ata-card-v2-header { display:flex; align-items:center; gap:12px; padding:12px 16px; position:relative; }
+    .ata-card-v2-cor { width:4px; position:absolute; left:0; top:0; bottom:0; }
+    .ata-card-v2-titulo-wrap { flex:1; padding-left:4px; }
+    .ata-card-v2-titulo { font-size:14px; font-weight:700; color:var(--azul-escuro); line-height:1.3; margin-bottom:2px; }
+    .ata-card-v2-meta { font-size:11.5px; color:var(--cinza-leve); display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+    .ata-card-v2-meta-sep { color:var(--cinza-linha); }
+    .ata-card-v2-indicators { display:flex; align-items:center; gap:5px; flex-shrink:0; }
+    .ata-ind { width:9px; height:9px; border-radius:50%; flex-shrink:0; opacity:.85; }
+    .ata-card-v2-link { flex-shrink:0; font-size:11.5px; font-weight:600; color:var(--azul-medio); text-decoration:none; border:1px solid var(--azul-borda); border-radius:var(--raio); padding:3px 9px; background:var(--azul-fundo); transition:background .15s; white-space:nowrap; }
+    .ata-card-v2-link:hover { background:var(--azul-borda); }
+    .ata-card-v2-body { padding:0 16px 14px; border-top:1px solid var(--cinza-linha); }
+    .ata-sec-label { font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--cinza-leve); margin:12px 0 6px; display:flex; align-items:center; gap:6px; }
+    .ata-sec-label::after { content:''; flex:1; height:1px; background:var(--cinza-linha); }
+    .pauta-item { display:flex; gap:8px; padding:5px 0; border-bottom:1px solid var(--cinza-linha); align-items:flex-start; }
+    .pauta-item:last-child { border-bottom:none; }
+    .pauta-n { font-size:11px; color:var(--cinza-leve); min-width:18px; flex-shrink:0; padding-top:1px; }
+    .pauta-txt { font-size:12.5px; color:var(--cinza-texto); line-height:1.45; flex:1; }
+    .delib-chips { display:flex; flex-direction:column; gap:5px; }
+    .delib-chip { display:flex; gap:8px; align-items:flex-start; padding:6px 10px; border-radius:var(--raio); }
+    .delib-chip.st-cumprida    { background:#f0faf4; }
+    .delib-chip.st-pendente    { background:#fff5f5; }
+    .delib-chip.st-informativa { background:var(--azul-fundo); }
+    .delib-chip-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; margin-top:4px; }
+    .delib-chip-badge { flex-shrink:0; font-size:10px; font-weight:700; padding:2px 7px; border-radius:3px; white-space:nowrap; margin-top:1px; }
+    .delib-chip-txt { color:var(--cinza-texto); font-size:12.5px; flex:1; line-height:1.4; }
+    /* ── Deliberações dashboard ── */
+    .st-cumprida    { background:var(--verde-bg);    color:var(--verde); }
+    .st-pendente    { background:var(--vermelho-bg); color:var(--vermelho); }
+    .st-informativa { background:var(--azul-fundo);  color:var(--azul-medio); }
+    .delib-dashboard { display:flex; flex-direction:column; gap:20px; }
+    .delib-kpis { display:flex; gap:10px; flex-wrap:wrap; }
+    .delib-kpi { background:var(--branco); border:1px solid var(--cinza-linha); border-radius:var(--raio); padding:10px 16px; box-shadow:var(--sombra); flex:1; min-width:90px; display:flex; flex-direction:column; gap:2px; cursor:pointer; transition:box-shadow .15s,transform .12s; }
+    .delib-kpi:hover { box-shadow:0 4px 16px rgba(26,58,107,.16); transform:translateY(-1px); }
+    .delib-kpi .dk-val { font-size:24px; font-weight:800; line-height:1; }
+    .delib-kpi .dk-lbl { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--cinza-leve); }
+    .delib-chart { background:var(--branco); border:1px solid var(--cinza-linha); border-radius:var(--raio-g); padding:16px; box-shadow:var(--sombra); }
+    .delib-chart-titulo { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--cinza-leve); margin-bottom:14px; padding-bottom:6px; border-bottom:1px solid var(--cinza-linha); }
+    .delib-chart-rows { display:flex; flex-direction:column; gap:10px; }
+    .delib-chart-row { display:flex; align-items:center; gap:10px; }
+    .delib-chart-ano { font-size:12px; font-weight:700; color:var(--azul-escuro); min-width:36px; text-align:right; }
+    .delib-chart-track { flex:1; height:22px; display:flex; border-radius:4px; overflow:hidden; background:var(--cinza-linha); }
+    .delib-chart-seg { height:100%; display:flex; align-items:center; justify-content:center; }
+    .delib-chart-seg span { font-size:10px; font-weight:700; color:rgba(255,255,255,.9); padding:0 4px; white-space:nowrap; }
+    .delib-chart-total { font-size:11px; color:var(--cinza-leve); min-width:28px; text-align:right; }
+    .delib-chart-legenda { display:flex; gap:14px; margin-top:12px; flex-wrap:wrap; }
+    .delib-chart-leg-item { display:flex; align-items:center; gap:5px; font-size:11.5px; color:var(--cinza-leve); }
+    .delib-chart-leg-dot { width:10px; height:10px; border-radius:2px; flex-shrink:0; }
+    .delib-lista-header { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
+    .delib-filtro-btn { padding:4px 12px; border-radius:20px; border:1.5px solid var(--cinza-linha); background:var(--branco); font-size:12px; font-weight:600; color:var(--cinza-leve); cursor:pointer; font-family:var(--fonte); transition:all .15s; white-space:nowrap; }
+    .delib-filtro-btn.ativo { border-color:currentColor; }
+    .delib-filtro-ano { padding:4px 10px; border-radius:var(--raio); border:1.5px solid var(--cinza-linha); background:var(--branco); font-size:12px; font-family:var(--fonte); color:var(--cinza-texto); cursor:pointer; margin-left:auto; }
+    .delib-ata-grupo { margin-bottom:10px; }
+    .delib-ata-header { display:flex; align-items:center; gap:10px; background:var(--azul-fundo); border:1px solid var(--azul-borda); border-radius:var(--raio) var(--raio) 0 0; padding:8px 12px; }
+    .delib-ata-num  { font-size:12px; font-weight:700; color:var(--azul-escuro); white-space:nowrap; }
+    .delib-ata-sep  { color:var(--azul-borda); }
+    .delib-ata-data { font-size:11.5px; color:var(--cinza-leve); }
+    .delib-ata-dur  { font-size:11.5px; color:var(--cinza-leve); }
+    .delib-ata-link { margin-left:auto; font-size:11.5px; font-weight:600; color:var(--azul-medio); text-decoration:none; white-space:nowrap; }
+    .delib-ata-link:hover { text-decoration:underline; }
+    .delib-ata-items { border:1px solid var(--azul-borda); border-top:none; border-radius:0 0 var(--raio) var(--raio); overflow:hidden; background:var(--branco); }
+    .delib-ata-item { display:flex; gap:10px; align-items:flex-start; padding:8px 12px 8px 24px; border-bottom:1px solid var(--cinza-linha); }
+    .delib-ata-item:last-child { border-bottom:none; }
+    .delib-ata-item:hover { background:var(--cinza-bg); }
+    .delib-ata-badge { flex-shrink:0; font-size:10px; font-weight:700; padding:2px 8px; border-radius:3px; white-space:nowrap; margin-top:2px; }
+    .delib-ata-txt { font-size:12.5px; color:var(--cinza-texto); line-height:1.4; flex:1; }
+    .delib-vazio { text-align:center; padding:30px 20px; color:var(--cinza-leve); font-size:13px; }
+    /* ── Estatísticas ── */
+    .stat-card { background:var(--branco); border:1px solid var(--cinza-linha); border-radius:var(--raio-g); padding:14px; box-shadow:var(--sombra); margin-bottom:12px; }
+    .stat-card h3 { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--cinza-leve); margin-bottom:12px; padding-bottom:5px; border-bottom:1px solid var(--cinza-linha); }
+    .gen-stat-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+    .gen-stat-row:last-child { margin-bottom:0; }
+    .gen-stat-label { font-size:13px; font-weight:500; min-width:80px; }
+    .gen-stat-bar-bg { flex:1; height:10px; background:var(--cinza-linha); border-radius:5px; overflow:hidden; }
+    .gen-stat-bar { height:100%; border-radius:5px; }
+    .gen-stat-bar.f { background:#7c6fcd; }
+    .gen-stat-bar.m { background:var(--azul-medio); }
+    .gen-stat-num { font-size:14px; font-weight:700; min-width:55px; text-align:right; }
+    .etnia-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:8px; }
+    .etnia-item { background:var(--cinza-bg); border:1px solid var(--cinza-linha); border-radius:var(--raio); padding:10px 12px; display:flex; flex-direction:column; gap:3px; }
+    .etnia-pct { font-size:20px; font-weight:800; color:var(--azul-escuro); line-height:1; }
+    .etnia-lbl { font-size:11px; color:var(--cinza-leve); font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+    .etnia-abs { font-size:11px; color:var(--cinza-leve); }
+
+    /* ── Calendário — layout bicoluna ── */
+    .cal-layout {
+      display: grid;
+      grid-template-columns: minmax(240px, 35%) 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .cal-col-esq { position: sticky; top: 0; }
+    .cal-wrap {
+      background: var(--branco); border: 1px solid var(--cinza-linha);
+      border-radius: var(--raio-g); overflow: hidden; box-shadow: var(--sombra);
+    }
+    .cal-header {
+      padding: 9px 12px; background: var(--azul-fundo);
+      border-bottom: 1px solid var(--azul-borda);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .cal-titulo { font-size: 13px; font-weight: 700; color: var(--azul-escuro); flex: 1; text-align: center; }
+    .cal-nav-btn {
+      background: var(--branco); border: 1px solid var(--azul-borda);
+      border-radius: var(--raio); width: 26px; height: 26px; cursor: pointer;
+      font-size: 14px; color: var(--azul-medio);
+      display: flex; align-items: center; justify-content: center; transition: background .15s;
+    }
+    .cal-nav-btn:hover { background: var(--azul-borda); }
+    .cal-grid-wrap { padding: 8px 10px 10px; }
+    .cal-dias-sem {
+      display: grid; grid-template-columns: repeat(7,1fr);
+      gap: 2px; margin-bottom: 3px;
+    }
+    .cal-dia-sem { text-align: center; font-size: 9px; font-weight: 700; color: var(--cinza-leve); text-transform: uppercase; letter-spacing: .04em; padding: 2px 0; }
+    .cal-dias { display: grid; grid-template-columns: repeat(7,1fr); gap: 2px; }
+    .cal-dia { min-height: 30px; border-radius: var(--raio); border: 1px solid transparent; display: flex; flex-direction: column; align-items: center; padding: 2px 1px; }
+    .cal-dia .dn { font-size: 11px; font-weight: 500; color: var(--cinza-leve); line-height: 1; }
+    .cal-dia.hoje { border-color: var(--azul-borda); background: var(--azul-fundo); }
+    .cal-dia.hoje .dn { color: var(--azul-medio); font-weight: 700; }
+    .cal-dia.realizada { background: var(--azul-fundo); border-color: var(--azul-borda); cursor: pointer; }
+    .cal-dia.realizada .dn { color: var(--azul-escuro); font-weight: 700; }
+    .cal-dia.prevista { background: var(--verde-bg); border-color: #a8d9bc; cursor: pointer; }
+    .cal-dia.prevista .dn { color: var(--verde); font-weight: 700; }
+    .cal-dia.prevista.destacado { box-shadow: 0 0 0 2px var(--verde); }
+    .cal-dia.realizada:hover, .cal-dia.prevista:hover { opacity: .85; }
+    .r-dot { width: 4px; height: 4px; border-radius: 50%; margin-top: 1px; }
+    .r-dot.azul  { background: var(--azul-medio); }
+    .r-dot.verde { background: var(--verde); }
+    .cal-legenda { display: flex; flex-direction: column; gap: 5px; padding: 7px 10px 9px; border-top: 1px solid var(--cinza-linha); }
+    .cl-it { display: flex; align-items: center; gap: 5px; font-size: 10.5px; color: var(--cinza-leve); }
+    .cl-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+    /* Coluna direita — próximas reuniões */
+    .cal-col-dir {}
+    .prox-vazio { font-size: 12.5px; color: var(--cinza-leve); padding: 20px 0; }
+    .prox-item {
+      display: flex; gap: 14px; background: var(--branco);
+      border: 1px solid var(--cinza-linha); border-radius: var(--raio-g);
+      padding: 13px 15px; margin-bottom: 12px; box-shadow: var(--sombra);
+      align-items: flex-start; transition: box-shadow .15s;
+    }
+    .prox-item.destacado { box-shadow: 0 0 0 2px var(--verde), var(--sombra); }
+    .prox-data-box {
+      flex-shrink: 0; background: var(--verde-bg); border: 1px solid #a8d9bc;
+      border-radius: var(--raio); padding: 8px 12px; text-align: center; min-width: 52px;
+    }
+    .prox-dia { font-size: 24px; font-weight: 900; color: var(--verde); line-height: 1; }
+    .prox-mes { font-size: 10px; font-weight: 700; color: var(--verde); text-transform: uppercase; letter-spacing: .05em; }
+    .prox-info { flex: 1; }
+    .prox-titulo { font-size: 14px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.3; }
+    .prox-detalhe { font-size: 12px; color: var(--cinza-leve); margin-bottom: 8px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .prox-detalhe span { display: flex; align-items: center; gap: 4px; }
+    .prox-pauta { font-size: 12px; color: var(--cinza-leve); margin-top: 6px; }
+    .prox-pauta summary { cursor: pointer; color: var(--azul-medio); font-weight: 600; font-size: 12px; }
+    .prox-pauta ul { padding-left: 16px; margin-top: 5px; }
+    .prox-pauta li { margin-bottom: 3px; line-height: 1.4; }
+    .btn-gcal {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--verde-bg); color: var(--verde);
+      border: 1px solid #a8d9bc; border-radius: var(--raio);
+      padding: 4px 10px; font-size: 11.5px; font-weight: 600;
+      font-family: var(--fonte); text-decoration: none; transition: background .15s;
+    }
+    .btn-gcal:hover { background: #bfdece; }
+
+    @media (max-width: 700px) {
+      .cal-layout { grid-template-columns: 1fr; }
+      .cal-col-esq { position: static; }
+    }
+
+    /* ── Avisos ── */
+    .aviso-incompleto { background:var(--amarelo-bg); border:1px solid #fcd97a; border-radius:var(--raio); padding:10px 13px; font-size:12.5px; color:var(--amarelo); margin-bottom:14px; display:flex; gap:7px; align-items:flex-start; }
+    /* ── Não encontrado ── */
+    .nao-encontrado { padding:60px 20px; text-align:center; color:var(--cinza-leve); }
+    .nao-encontrado h2 { font-size:16px; margin-bottom:8px; }
+    /* ── Responsivo ── */
+    @media (max-width:700px) {
+      body { padding:10px 10px 48px; }
+      .card-topo-esq { width:80px; }
+      .card-topo-sigla { font-size:13px; }
+      .card-topo-membros { font-size:18px; }
+      .card-topo-nome { font-size:16px; }
+      .fichas { grid-template-columns:1fr; }
+      .ficha.span2 { grid-column:span 1; }
+      .aba-conteudo { padding:14px 12px 24px; }
+    }
+
+    /* ── Cards de ano (Atas e Deliberações) ── */
+    .ano-card { background:var(--branco); border:1px solid var(--cinza-linha); border-radius:var(--raio-g); box-shadow:var(--sombra); overflow:hidden; margin-bottom:16px; }
+    .ano-card-header { display:flex; align-items:center; gap:14px; padding:12px 16px; cursor:pointer; user-select:none; transition:background .12s; background:var(--azul-fundo); border-bottom:1px solid var(--azul-borda); }
+    .ano-card-header:hover { background:var(--azul-borda); }
+    .ano-card-header.colapsado { border-bottom:none; }
+    .ano-num { font-size:22px; font-weight:900; color:var(--azul-escuro); line-height:1; }
+    .ano-num.corrente { color:var(--azul-medio); }
+    .ano-badges { display:flex; gap:8px; flex-wrap:wrap; flex:1; }
+    .ano-badge { font-size:11px; font-weight:700; padding:2px 9px; border-radius:20px; background:var(--branco); border:1px solid var(--azul-borda); color:var(--cinza-leve); white-space:nowrap; }
+    .ano-badge.pend { background:var(--vermelho-bg); border-color:#fca5a5; color:var(--vermelho); }
+    .ano-seta { flex-shrink:0; width:22px; height:22px; border-radius:50%; background:rgba(255,255,255,.6); display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--azul-escuro); transition:transform .2s; }
+    .ano-card-header.colapsado .ano-seta { transform:rotate(-90deg); }
+    .ano-card-body { padding:14px 14px 4px; }
+    .ano-card-body.oculto { display:none; }
+    /* Filtro de ano (aba Atas) */
+    .atas-filtro-bar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+    .atas-filtro-btn { padding:4px 14px; border-radius:20px; border:1.5px solid var(--cinza-linha); background:var(--branco); font-size:12px; font-weight:600; color:var(--cinza-leve); cursor:pointer; font-family:var(--fonte); transition:all .15s; white-space:nowrap; }
+    .atas-filtro-btn.ativo { background:var(--azul-escuro); border-color:var(--azul-escuro); color:var(--branco); }
+
+    /* ── Linha de três dados (membros · periodicidade · designação) ── */
+    .ficha-trilinha {
+      display: grid;
+      grid-template-columns: auto 1fr 1fr;
+      gap: 0;
+      background: var(--cinza-bg);
+      border: 1px solid var(--cinza-linha);
+      border-radius: var(--raio);
+      overflow: hidden;
+      grid-column: span 2;
+    }
+    .ficha-tl-item {
+      padding: 8px 12px;
+      border-right: 1px solid var(--cinza-linha);
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .ficha-tl-item:last-child { border-right: none; }
+    .ficha-tl-item label {
+      font-size: 9.5px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .06em; color: var(--cinza-leve);
+    }
+    .ficha-tl-item span {
+      font-size: 13px; font-weight: 500; color: var(--cinza-texto); line-height: 1.3;
+    }
+    .ficha-membros-btn {
+      font-size: 18px; font-weight: 900; color: var(--azul-medio);
+      line-height: 1; cursor: pointer; background: none; border: none;
+      font-family: var(--fonte); padding: 0; text-align: left;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: color .15s;
+    }
+    .ficha-membros-btn:hover { color: var(--azul-escuro); }
+    .ficha-membros-btn:hover .ficha-membros-icon { opacity: .7; }
+    .ficha-membros-icon {
+      font-size: 14px; opacity: .35; transition: opacity .15s;
+    }
+    .ficha-membros-hint { display: none; }
+  </style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script src="dados.js"></script>
+<script>
+const mesesNomes  = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+const mesesCurtos = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+
+/* Suaviza cor para moldura */
+function softenCor(hex) {
+  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  const avg=Math.round((r+g+b)/3);
+  const sr=Math.round(r*.45+avg*.55),sg=Math.round(g*.45+avg*.55),sb=Math.round(b*.45+avg*.55);
+  return `rgb(${Math.round(sr+(255-sr)*.35)},${Math.round(sg+(255-sg)*.35)},${Math.round(sb+(255-sb)*.35)})`;
+}
+function hexToRgba(hex,alpha){
+  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function parseData(str) {
+  const [y, m, d] = str.split('-').map(Number);
+  return { y, m: m - 1, d };
+}
+
+
+let calState = { ano: new Date().getFullYear(), mes: new Date().getMonth() };
+let comAtual = null;
+
+function renderPage(c) {
+  comAtual = c;
+  document.documentElement.style.setProperty('--cor-com', c.cor);
+  document.title = `${c.sigla} — TRE-RN`;
+  document.getElementById('app').innerHTML = `
+    <div class="pg-voltar"><a href="index.html" class="btn-voltar">← Todas as comissões</a></div>
+    <div class="card-moldura" style="border-color:${softenCor(c.cor)}">
+      <div class="card-topo">
+        <div class="card-topo-esq" style="background:${softenCor(c.cor)}">
+          <div class="card-topo-sigla">${esc(c.sigla)}</div>
+
+        </div>
+        <div class="card-topo-dir">
+          <div class="card-topo-nome-faixa" style="background:${hexToRgba(c.cor,0.08)}">
+            <div class="card-topo-nome">${esc(c.nome)}</div>
+          </div>
+        </div>
+      </div>
+      <div class="abas-nav" id="abas-nav">
+        <button class="aba-btn ativa" onclick="trocarAba('visao-geral',this)">Visão Geral</button>
+        <button class="aba-btn" onclick="trocarAba('composicao',this)">Composição</button>
+        <button class="aba-btn" onclick="trocarAba('normas',this)">Normas</button>
+        <button class="aba-btn" onclick="trocarAba('atas',this)">Atas</button>
+        <button class="aba-btn" onclick="trocarAba('deliberacoes',this)">Deliberações</button>
+        <button class="aba-btn" onclick="trocarAba('calendario',this)">Calendário</button>
+      </div>
+      <div id="aba-visao-geral"  class="aba-conteudo ativa">${renderVisaoGeral(c)}</div>
+      <div id="aba-composicao"   class="aba-conteudo">${renderComposicao(c)}</div>
+      <div id="aba-normas"       class="aba-conteudo">${renderNormas(c)}</div>
+      <div id="aba-atas"         class="aba-conteudo">${renderAtas(c)}</div>
+      <div id="aba-deliberacoes" class="aba-conteudo">${renderDeliberacoes(c)}</div>
+      <div id="aba-calendario"   class="aba-conteudo">${renderCalendario(c)}</div>
+    </div>`;
+  renderCalDias(c);
+}
+
+/* ── Visão Geral ── */
+function renderVisaoGeral(c) {
+  const secretaria = Array.isArray(c.secretaria)
+    ? c.secretaria.map(s=>`${esc(s.nome)}<small>${esc(s.setor)}</small>`).join('<br>')
+    : `${esc(c.secretaria.nome)}<small>${esc(c.secretaria.setor)}</small>`;
+  const normaDes = (c.normas_designacao||[]).find(n=>n.vigente);
+  const desigHtml = normaDes
+    ? (normaDes.link?`<a href="${esc(normaDes.link)}" target="_blank" style="color:var(--azul-medio)">${esc(normaDes.nome)}</a>`:esc(normaDes.nome))
+    : (c.base_legal&&c.base_legal.link?`<a href="${esc(c.base_legal.link)}" target="_blank" style="color:var(--azul-medio)">${esc(c.base_legal.nome)}</a>`:esc((c.base_legal||{}).nome||'—'));
+  const incomHtml = '';
+  let genHtml='';
+  if(c.genero){const tot=c.genero.fem+c.genero.masc,pctF=Math.round(c.genero.fem/tot*100),pctM=100-pctF;genHtml=`<div class="stat-card"><h3>Distribuição por gênero</h3><div class="gen-stat-row"><span class="gen-stat-label">Feminino</span><div class="gen-stat-bar-bg"><div class="gen-stat-bar f" style="width:${pctF}%"></div></div><span class="gen-stat-num">${pctF}% <small style="font-weight:400;color:var(--cinza-leve)">(${c.genero.fem})</small></span></div><div class="gen-stat-row"><span class="gen-stat-label">Masculino</span><div class="gen-stat-bar-bg"><div class="gen-stat-bar m" style="width:${pctM}%"></div></div><span class="gen-stat-num">${pctM}% <small style="font-weight:400;color:var(--cinza-leve)">(${c.genero.masc})</small></span></div></div>`;}
+  let etnHtml='';
+  if(c.etnia){const totE=Object.values(c.etnia).reduce((s,v)=>s+v,0);const nomes={branco:'Branco',pardo:'Pardo',amarelo:'Amarelo',negro:'Negro',indigena:'Indígena'};const items=Object.entries(c.etnia).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="etnia-item"><div class="etnia-pct">${Math.round(v/totE*100)}%</div><div class="etnia-lbl">${nomes[k]||k}</div><div class="etnia-abs">${v} membro(s)</div></div>`).join('');etnHtml=`<div class="stat-card"><h3>Distribuição étnica</h3><div class="etnia-grid">${items}</div></div>`;}
+  return `${incomHtml}
+    <div class="secao"><div class="secao-titulo">Identificação</div>
+      <div class="fichas">
+        <div class="ficha span2"><label>Área responsável</label><span>${esc(c.area)}</span></div>
+        <div class="ficha dest"><label>Presidente</label><span>${esc(c.presidencia.nome)}<small>${esc(c.presidencia.setor)}</small></span></div>
+        <div class="ficha dest"><label>Secretaria</label><span>${secretaria}</span></div>
+        <div class="ficha-trilinha">
+          <div class="ficha-tl-item">
+            <label>Nº de membros</label>
+            <button class="ficha-membros-btn" onclick="trocarAba('composicao', document.querySelector('.aba-btn:nth-child(2)'))" title="Clique para ver a composição">
+              ${c.membros_total??'—'}<span class="ficha-membros-icon" style="font-size:12px;opacity:.4;font-style:normal">↗</span>
+            </button>
+          </div>
+          <div class="ficha-tl-item">
+            <label>Periodicidade</label>
+            <span>${esc(c.periodicidade)}</span>
+          </div>
+          <div class="ficha-tl-item">
+            <label>Norma de designação</label>
+            <span>${desigHtml}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    ${genHtml||etnHtml?`<div class="secao"><div class="secao-titulo">Estatísticas</div>${genHtml}${etnHtml}</div>`:''}`;
+}
+
+function renderComposicao(c) {
+  if (!c.composicao || !c.composicao.length) {
+    return '<p style="font-size:12.5px;color:var(--cinza-leve);padding:20px 0">Composição não cadastrada.</p>';
+  }
+  const linhas = c.composicao.map(m => `
+    <tr>
+      <td>${esc(m.unidade)}</td>
+      <td>${esc(m.membro)}</td>
+      <td>${m.obs ? `<span class="obs-badge">${esc(m.obs)}</span>` : ''}</td>
+    </tr>`).join('');
+
+  return `
+    <div class="secao">
+      <div class="secao-titulo">Membros (${c.composicao.length})</div>
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Unidade</th>
+              <th>Servidor(a)</th>
+              <th>Observação</th>
+            </tr>
+          </thead>
+          <tbody>${linhas}</tbody>
+        </table>
+      </div>
+    </div>`;
+}
+
+/* ── Normas ── */
+function renderNormas(c) {
+  const designacoes=(c.normas_designacao||[]).slice().sort((a,b)=>(b.vigente?1:0)-(a.vigente?1:0));
+  const tlHtml=designacoes.length?designacoes.map(n=>{const cls=n.vigente?'vigente':'historico',lbl=n.vigente?'Vigente':'Histórico';const nome=n.link?`<a href="${esc(n.link)}" target="_blank">${esc(n.nome)}</a>`:esc(n.nome);return`<div class="desig-tl-item"><div class="desig-tl-dot ${cls}"></div><div class="desig-tl-corpo"><span class="desig-tl-badge ${cls}">${lbl}</span><div class="desig-tl-nome">${nome}</div>${n.descricao?`<div class="desig-tl-desc">${esc(n.descricao)}</div>`:''}</div></div>`;}).join(''):'<p style="font-size:12.5px;color:var(--cinza-leve)">Nenhuma norma de designação cadastrada.</p>';
+  const vinculadas=c.normas_vinculadas||[];
+  const nvHtml=vinculadas.length?`<div class="norma-lista">${vinculadas.map(n=>{const nome=n.link?`<a href="${esc(n.link)}" target="_blank">${esc(n.nome)}</a>`:esc(n.nome);return`<div class="norma-lista-item"><span class="norma-lista-orgao ${esc(n.orgao)}">${esc(n.orgao)}</span><div class="norma-lista-corpo"><div class="norma-lista-nome">${nome}</div>${n.descricao?`<div class="norma-lista-desc">${esc(n.descricao)}</div>`:''}</div></div>`;}).join('')}</div>`:'<p style="font-size:12.5px;color:var(--cinza-leve)">Nenhuma norma vinculada cadastrada.</p>';
+  return `<div class="secao"><div class="secao-titulo">Normas de designação — série histórica</div><div class="desig-timeline">${tlHtml}</div></div>
+    <div class="secao"><div class="secao-titulo">Normas vinculadas</div>${nvHtml}</div>`;
+}
+
+/* ── Atas ── */
+const ST = {
+  cumprida   : { label:'Cumprida',    cls:'st-cumprida',    cor:'var(--verde)'     },
+  pendente   : { label:'Pendente',    cls:'st-pendente',    cor:'var(--vermelho)'  },
+  informativa: { label:'Informativa', cls:'st-informativa', cor:'var(--azul-claro)'},
+};
+
+function renderAtas(c) {
+  const porAno = {};
+  (c.atas||[]).forEach(a => { if(!porAno[a.ano])porAno[a.ano]=[]; porAno[a.ano].push(a); });
+  const anosOrd   = Object.keys(porAno).sort((a,b)=>b-a);
+  const corSuave  = softenCor(c.cor);
+  const anoCor    = String(new Date().getFullYear());
+
+  const filtroHtml = `<div class="atas-filtro-bar" id="atas-filtro-${c.id}">
+    <button class="atas-filtro-btn ativo" onclick="filtrarAnoAtas('${c.id}','todos')">Todos os anos</button>
+    ${anosOrd.map(a=>`<button class="atas-filtro-btn" onclick="filtrarAnoAtas('${c.id}','${a}')">${a}</button>`).join('')}
+  </div>`;
+
+  const anosHtml = anosOrd.map(ano => {
+    const atas    = porAno[ano];
+    const isCor   = ano === anoCor;
+    const nPend   = atas.reduce((s,a)=>s+(a.delib||[]).filter(d=>d.status==='pendente').length, 0);
+    const ordemSt = {cumprida:0, informativa:1, pendente:2};
+
+    const cards = atas.map(a => {
+      const delibs = a.delib||[];
+      const inds = [
+        delibs.some(d=>d.status==='pendente')    ? `<div class="ata-ind" style="background:var(--vermelho)"></div>` : '',
+        delibs.some(d=>d.status==='informativa') ? `<div class="ata-ind" style="background:var(--azul-claro)"></div>` : '',
+        delibs.some(d=>d.status==='cumprida')    ? `<div class="ata-ind" style="background:var(--verde)"></div>` : '',
+      ].join('');
+      const durStr = a.duracao ? formatMin(durToMin(a.duracao)) : '';
+      const metaPartes = [a.data, durStr].filter(Boolean);
+      const pautaHtml = (a.pauta||[]).length
+        ? `<div class="ata-sec-label">Pauta</div><div>${(a.pauta).map((p,i)=>`<div class="pauta-item"><span class="pauta-n">${i+1}.</span><span class="pauta-txt">${esc(p)}</span></div>`).join('')}</div>` : '';
+      const delOrd  = [...delibs].sort((x,y)=>(ordemSt[x.status]??9)-(ordemSt[y.status]??9));
+      const delHtml = delOrd.length
+        ? `<div class="ata-sec-label">Deliberações</div><div class="delib-chips">${delOrd.map(d=>{const st=ST[d.status]||ST.informativa;return`<div class="delib-chip ${st.cls}"><div class="delib-chip-dot" style="background:${st.cor}"></div><span class="delib-chip-badge ${st.cls}">${st.label}</span><span class="delib-chip-txt">${esc(d.txt)}</span></div>`;}).join('')}</div>` : '';
+      const linkHtml  = a.url ? `<a href="${esc(a.url)}" target="_blank" class="ata-card-v2-link">↗ Ver ata</a>` : '';
+      const semDados  = !a.url && !delibs.length && !(a.pauta||[]).length;
+      return `<div class="ata-card-v2">
+        <div class="ata-card-v2-header">
+          <div class="ata-card-v2-cor" style="background:${corSuave}"></div>
+          <div class="ata-card-v2-titulo-wrap">
+            <div class="ata-card-v2-titulo">${esc(a.titulo)}</div>
+            <div class="ata-card-v2-meta">${metaPartes.map((p,i)=>i===0?esc(p):`<span class="ata-card-v2-meta-sep">·</span>${esc(p)}`).join('')}</div>
+          </div>
+          <div class="ata-card-v2-indicators">${inds}</div>
+          ${linkHtml}
+        </div>
+        ${!semDados ? `<div class="ata-card-v2-body">${pautaHtml}${delHtml}</div>` : ''}
+      </div>`;
+    }).join('');
+
+    const cardId = `ano-atas-${c.id}-${ano}`;
+    return `<div class="ano-card" id="${cardId}" data-ano="${ano}">
+      <div class="ano-card-header${isCor?'':' colapsado'}" onclick="toggleAno('${cardId}')">
+        <span class="ano-num${isCor?' corrente':''}">${ano}</span>
+        <div class="ano-badges">
+          <span class="ano-badge">${atas.length} ${atas.length===1?'reunião':'reuniões'}</span>
+          ${nPend ? `<span class="ano-badge pend">⚠ ${nPend} pendente${nPend>1?'s':''}</span>` : ''}
+        </div>
+        <div class="ano-seta">▼</div>
+      </div>
+      <div class="ano-card-body${isCor?'':' oculto'}" id="body-${cardId}">
+        ${cards}
+      </div>
+    </div>`;
+  }).join('');
+
+  return `<div class="secao">${filtroHtml}<div id="atas-lista-${c.id}">${anosHtml}</div></div>`;
+}
+
+function toggleAno(cardId) {
+  const header = document.querySelector('#' + cardId + ' .ano-card-header');
+  const body   = document.getElementById('body-' + cardId);
+  if (!header || !body) return;
+  const col = !header.classList.contains('colapsado');
+  header.classList.toggle('colapsado', col);
+  body.classList.toggle('oculto', col);
+}
+
+function filtrarAnoAtas(comId, ano) {
+  document.querySelectorAll('#atas-lista-' + comId + ' .ano-card').forEach(card => {
+    card.style.display = (ano === 'todos' || card.dataset.ano === ano) ? '' : 'none';
+  });
+  document.querySelectorAll('#atas-filtro-' + comId + ' .atas-filtro-btn').forEach(btn => {
+    btn.classList.toggle('ativo',
+      btn.textContent.trim() === ano ||
+      (ano === 'todos' && btn.textContent.trim() === 'Todos os anos')
+    );
+  });
+}
+
+/* ── Deliberações ── */
+const _filtroAtivo = {};
+
+function renderDeliberacoes(c) {
+  const atasComDelib = (c.atas||[]).filter(a=>a.delib&&a.delib.length).sort((a,b)=>parseInt(b.ano)-parseInt(a.ano));
+  const todas = [];
+  atasComDelib.forEach(a => a.delib.forEach(d =>
+    todas.push({txt:d.txt, status:d.status||'informativa',
+      ataNum:a.num, ataTit:a.titulo, ataAno:parseInt(a.ano),
+      ataData:a.data, ataUrl:a.url, ataDur:a.duracao})
+  ));
+  if (!todas.length) return '<div class="delib-vazio">Nenhuma deliberação cadastrada.</div>';
+
+  const total  = todas.length;
+  const nPend  = todas.filter(d=>d.status==='pendente').length;
+  const nCumpr = todas.filter(d=>d.status==='cumprida').length;
+  const nInfo  = todas.filter(d=>d.status==='informativa').length;
+
+  const kpisHtml = `<div class="delib-kpis" id="delib-kpis-${c.id}">
+    <div class="delib-kpi" onclick="filtrarDelibs('${c.id}','todos')" id="kpi-${c.id}-todos"><span class="dk-val" style="color:var(--azul-escuro)">${total}</span><span class="dk-lbl">Total</span></div>
+    <div class="delib-kpi" onclick="filtrarDelibs('${c.id}','pendente')" id="kpi-${c.id}-pendente"><span class="dk-val" style="color:var(--vermelho)">${nPend}</span><span class="dk-lbl">Pendentes</span></div>
+    <div class="delib-kpi" onclick="filtrarDelibs('${c.id}','cumprida')" id="kpi-${c.id}-cumprida"><span class="dk-val" style="color:var(--verde)">${nCumpr}</span><span class="dk-lbl">Cumpridas</span></div>
+    <div class="delib-kpi" onclick="filtrarDelibs('${c.id}','informativa')" id="kpi-${c.id}-informativa"><span class="dk-val" style="color:var(--azul-claro)">${nInfo}</span><span class="dk-lbl">Informativas</span></div>
+  </div>`;
+
+  const anos = [...new Set(todas.map(d=>d.ataAno))].sort();
+  const COR  = {pendente:'var(--vermelho)', cumprida:'var(--verde)', informativa:'var(--azul-claro)'};
+  const chartRows = anos.map(ano => {
+    const doAno = todas.filter(d=>d.ataAno===ano), tot = doAno.length;
+    const segs  = ['pendente','cumprida','informativa'].map(st => {
+      const n = doAno.filter(d=>d.status===st).length, pct = tot ? Math.round(n/tot*100) : 0;
+      if (!n) return '';
+      return `<div class="delib-chart-seg" style="width:${pct}%;background:${COR[st]}">${pct>=12?`<span>${n}</span>`:''}</div>`;
+    }).join('');
+    return `<div class="delib-chart-row"><span class="delib-chart-ano">${ano}</span><div class="delib-chart-track">${segs}</div><span class="delib-chart-total">${tot}</span></div>`;
+  }).join('');
+
+  const chartHtml = `<div class="delib-chart">
+    <div class="delib-chart-titulo">Distribuição por ano e status</div>
+    <div class="delib-chart-rows">${chartRows}</div>
+    <div class="delib-chart-legenda">
+      <div class="delib-chart-leg-item"><div class="delib-chart-leg-dot" style="background:var(--vermelho)"></div>Pendente</div>
+      <div class="delib-chart-leg-item"><div class="delib-chart-leg-dot" style="background:var(--verde)"></div>Cumprida</div>
+      <div class="delib-chart-leg-item"><div class="delib-chart-leg-dot" style="background:var(--azul-claro)"></div>Informativa</div>
+    </div>
+  </div>`;
+
+  const filtrosHtml = `<div class="delib-lista-header">
+    <button class="delib-filtro-btn ativo" onclick="filtrarDelibs('${c.id}','todos')" id="fbtn-${c.id}-todos">Todas</button>
+    <button class="delib-filtro-btn" onclick="filtrarDelibs('${c.id}','pendente')" id="fbtn-${c.id}-pendente" style="color:var(--vermelho)">Pendentes</button>
+    <button class="delib-filtro-btn" onclick="filtrarDelibs('${c.id}','cumprida')" id="fbtn-${c.id}-cumprida" style="color:var(--verde)">Cumpridas</button>
+    <button class="delib-filtro-btn" onclick="filtrarDelibs('${c.id}','informativa')" id="fbtn-${c.id}-informativa" style="color:var(--azul-claro)">Informativas</button>
+  </div>
+  <div id="delib-lista-${c.id}"></div>`;
+
+  window._delibDados = window._delibDados||{};
+  window._delibDados[c.id] = {atas: atasComDelib, todas};
+  setTimeout(() => filtrarDelibs('${c.id}', 'todos'), 0);
+  return `<div class="delib-dashboard">${kpisHtml}${chartHtml}${filtrosHtml}</div>`;
+}
+
+function filtrarDelibs(comId, status) {
+  _filtroAtivo[comId] = _filtroAtivo[comId] || {status:'todos'};
+  if (status !== undefined) _filtroAtivo[comId].status = status;
+
+  const filtSt     = _filtroAtivo[comId].status;
+  const dados      = (window._delibDados||{})[comId] || {atas:[], todas:[]};
+  const anoCor     = String(new Date().getFullYear());
+  const ordemSt    = {cumprida:0, informativa:1, pendente:2};
+
+  const porAno = {};
+  dados.atas.forEach(a => {
+    const itens = (a.delib||[]).filter(d => filtSt==='todos' || d.status===filtSt);
+    if (!itens.length) return;
+    if (!porAno[a.ano]) porAno[a.ano] = [];
+    porAno[a.ano].push({ata:a, itens:[...itens].sort((x,y)=>(ordemSt[x.status]??9)-(ordemSt[y.status]??9))});
+  });
+
+  const anosOrd = Object.keys(porAno).sort((a,b)=>b-a);
+  const el = document.getElementById('delib-lista-' + comId);
+  if (!el) return;
+
+  if (!anosOrd.length) {
+    el.innerHTML = '<div class="delib-vazio">Nenhuma deliberação para este filtro.</div>';
+    return;
+  }
+
+  el.innerHTML = anosOrd.map(ano => {
+    const grupos   = porAno[ano];
+    const isCor    = ano === anoCor;
+    const nPendAno = grupos.reduce((s,g)=>s+g.itens.filter(d=>d.status==='pendente').length, 0);
+    const nItens   = grupos.reduce((s,g)=>s+g.itens.length, 0);
+
+    const subcards = grupos.map(({ata, itens}) => {
+      const durStr = ata.duracao ? ' · ' + formatMin(durToMin(ata.duracao)) : '';
+      const link   = ata.url ? `<a href="${esc(ata.url)}" target="_blank" class="delib-ata-link">↗ Ver ata</a>` : '';
+      return `<div class="delib-ata-grupo">
+        <div class="delib-ata-header">
+          <span class="delib-ata-num">${esc(ata.num)}</span>
+          <span class="delib-ata-sep">·</span>
+          <span class="delib-ata-data">${esc(ata.data)}</span>
+          ${durStr ? `<span class="delib-ata-sep">·</span><span class="delib-ata-dur">${durStr.replace(' · ','')}</span>` : ''}
+          ${link}
+        </div>
+        <div class="delib-ata-items">
+          ${itens.map(d => { const st=ST[d.status]||ST.informativa; return `<div class="delib-ata-item"><span class="delib-ata-badge ${st.cls}">${st.label}</span><span class="delib-ata-txt">${esc(d.txt)}</span></div>`; }).join('')}
+        </div>
+      </div>`;
+    }).join('');
+
+    const cardId = `ano-delib-${comId}-${ano}`;
+    return `<div class="ano-card" id="${cardId}">
+      <div class="ano-card-header${isCor?'':' colapsado'}" onclick="toggleAno('${cardId}')">
+        <span class="ano-num${isCor?' corrente':''}">${ano}</span>
+        <div class="ano-badges">
+          <span class="ano-badge">${nItens} deliberaç${nItens===1?'ão':'ões'}</span>
+          ${nPendAno ? `<span class="ano-badge pend">⚠ ${nPendAno} pendente${nPendAno>1?'s':''}</span>` : ''}
+        </div>
+        <div class="ano-seta">▼</div>
+      </div>
+      <div class="ano-card-body${isCor?'':' oculto'}" id="body-${cardId}">
+        ${subcards}
+      </div>
+    </div>`;
+  }).join('');
+
+  ['todos','pendente','cumprida','informativa'].forEach(s => {
+    const btn = document.getElementById('fbtn-'+comId+'-'+s);
+    if (!btn) return;
+    const ativo = s === _filtroAtivo[comId].status;
+    btn.classList.toggle('ativo', ativo);
+    btn.style.borderColor = ativo && s!=='todos' ? btn.style.color : '';
+    btn.style.background  = ativo && s!=='todos' ? 'rgba(0,0,0,.04)' : '';
+  });
+}
+
+function trocarAba(id, btn) {
+  document.querySelectorAll('.aba-btn').forEach(b => b.classList.remove('ativa'));
+  document.querySelectorAll('.aba-conteudo').forEach(s => s.classList.remove('ativa'));
+  btn.classList.add('ativa');
+  document.getElementById(`aba-${id}`).classList.add('ativa');
+  if (id === 'calendario' && comAtual) { calState = { ano: new Date().getFullYear(), mes: new Date().getMonth() }; renderCalDias(comAtual); }
+}
+
+function renderCalendario(c) {
+  const hoje = new Date();
+  const proximas = c.proximas || [];
+
+  // Próximas reuniões — coluna direita
+  const proxHtml = !proximas.length
+    ? '<p class="prox-vazio">Nenhuma reunião prevista cadastrada.</p>'
+    : proximas.map((r, idx) => {
+        const dt  = parseData(r.data);
+        const url = gcalUrl(r, c.nome);
+        const durStr = r.duracao ? ` · ${r.duracao.replace(':','h')}` : '';
+        return `
+          <div class="prox-item" id="prox-item-${idx}" data-data="${esc(r.data)}">
+            <div class="prox-data-box">
+              <div class="prox-dia">${dt.d}</div>
+              <div class="prox-mes">${mesesCurtos[dt.m]}</div>
+            </div>
+            <div class="prox-info">
+              <div class="prox-titulo">${esc(r.titulo)}</div>
+              <div class="prox-detalhe">
+                <span>🕐 ${esc(r.horario)}${durStr}</span>
+                <span>📍 ${esc(r.local)}</span>
+              </div>
+              <a href="${url}" target="_blank" class="btn-gcal">+ Adicione em sua agenda</a>
+              ${r.pauta && r.pauta.length ? `
+              <details class="prox-pauta">
+                <summary>Ver pauta prevista (${r.pauta.length} item${r.pauta.length>1?'s':''})</summary>
+                <ul>${r.pauta.map(p=>`<li>${esc(p)}</li>`).join('')}</ul>
+              </details>` : ''}
+            </div>
+          </div>`;
+      }).join('');
+
+  return `
+    <div class="cal-layout">
+      <!-- Coluna esquerda: calendário -->
+      <div class="cal-col-esq">
+        <div class="cal-wrap">
+          <div class="cal-header">
+            <button class="cal-nav-btn" onclick="mudarMes(-1)">‹</button>
+            <span class="cal-titulo" id="cal-titulo" onclick="abrirSeletorAno()" style="cursor:pointer;user-select:none" title="Clique para escolher o ano">
+            </span>
+            <button class="cal-nav-btn" onclick="mudarMes(1)">›</button>
+          </div>
+          <div id="cal-seletor-ano" style="display:none;padding:8px 10px;border-bottom:1px solid var(--cinza-linha);display:none">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+              <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--cinza-leve)">Escolher ano</span>
+              <button onclick="fecharSeletorAno()" style="background:none;border:none;cursor:pointer;color:var(--cinza-leve);font-size:14px;line-height:1;padding:0">×</button>
+            </div>
+            <div id="cal-anos-grid" style="display:flex;flex-wrap:wrap;gap:5px"></div>
+          </div>
+          <div class="cal-grid-wrap">
+            <div class="cal-dias-sem">
+              <div class="cal-dia-sem">D</div><div class="cal-dia-sem">S</div>
+              <div class="cal-dia-sem">T</div><div class="cal-dia-sem">Q</div>
+              <div class="cal-dia-sem">Q</div><div class="cal-dia-sem">S</div>
+              <div class="cal-dia-sem">S</div>
+            </div>
+            <div class="cal-dias" id="cal-dias"></div>
+          </div>
+          <div class="cal-legenda">
+            <div class="cl-it"><div class="cl-dot" style="background:var(--verde)"></div>Reunião prevista</div>
+            <div class="cl-it"><div class="cl-dot" style="background:var(--azul-medio)"></div>Reunião realizada</div>
+            <div class="cl-it"><div class="cl-dot" style="background:var(--azul-fundo);border:1px solid var(--azul-borda)"></div>Hoje</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna direita: próximas reuniões -->
+      <div class="cal-col-dir">
+        <div class="secao-titulo" style="margin-bottom:12px">Próximas reuniões previstas</div>
+        ${proxHtml}
+      </div>
+    </div>`;
+}
+
+function renderCalDias(c) {
+  const el = document.getElementById('cal-dias');
+  if (!el) return;
+  const tit = document.getElementById('cal-titulo');
+  if (tit) tit.innerHTML = `${mesesNomes[calState.mes]} <span style="font-size:13px;opacity:.8">${calState.ano} ▾</span>`;
+
+  const hoje = new Date();
+  const diasNoMes = new Date(calState.ano, calState.mes + 1, 0).getDate();
+  const iniSem    = new Date(calState.ano, calState.mes, 1).getDay();
+
+  const datasAta = (c.atas || [])
+    .filter(a => a.url && a.data && a.data !== '—' && a.data.includes('-'))
+    .map(a => parseData(a.data));
+
+  const datasPrev = (c.proximas || []).map((r, idx) => ({ ...parseData(r.data), idx }));
+
+  let html = '';
+  for (let i = 0; i < iniSem; i++) html += '<div class="cal-dia"></div>';
+  for (let d = 1; d <= diasNoMes; d++) {
+    const isH = hoje.getFullYear()===calState.ano && hoje.getMonth()===calState.mes && hoje.getDate()===d;
+    const isA = datasAta.some(dt => dt.y===calState.ano && dt.m===calState.mes && dt.d===d);
+    const prevMatch = datasPrev.find(dt => dt.y===calState.ano && dt.m===calState.mes && dt.d===d);
+    const isP = !!prevMatch;
+
+    let cls = 'cal-dia';
+    let dot = '';
+    let click = '';
+    if (isH)  cls += ' hoje';
+    if (isA)  { cls += ' realizada'; dot = '<div class="r-dot azul"></div>'; }
+    if (isP)  {
+      cls += ' prevista';
+      dot = '<div class="r-dot verde"></div>';
+      click = `onclick="destacarProx(${prevMatch.idx})"`;
+    }
+    html += `<div class="${cls}" ${click}><span class="dn">${d}</span>${dot}</div>`;
+  }
+  el.innerHTML = html;
+}
+
+function destacarProx(idx) {
+  // Remover destaques anteriores
+  document.querySelectorAll('.prox-item.destacado').forEach(el => el.classList.remove('destacado'));
+  const el = document.getElementById('prox-item-' + idx);
+  if (!el) return;
+  el.classList.add('destacado');
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  setTimeout(() => el.classList.remove('destacado'), 2500);
+}
+
+function mudarMes(dir) {
+  calState.mes += dir;
+  if (calState.mes > 11) { calState.mes = 0; calState.ano++; }
+  if (calState.mes < 0)  { calState.mes = 11; calState.ano--; }
+  if (comAtual) renderCalDias(comAtual);
+}
+
+function abrirSeletorAno() {
+  const el = document.getElementById('cal-seletor-ano');
+  if (!el) return;
+  const vis = el.style.display !== 'none';
+  if (vis) { fecharSeletorAno(); return; }
+
+  // Gerar grade de anos: 5 anos atrás até 3 à frente
+  const base = calState.ano;
+  const anos = [];
+  for (let a = base - 5; a <= base + 3; a++) anos.push(a);
+
+  const grid = document.getElementById('cal-anos-grid');
+  if (grid) {
+    grid.innerHTML = anos.map(a => `
+      <button onclick="irParaAno(${a})" style="
+        padding:4px 10px; border-radius:var(--raio); border:1.5px solid ${a===calState.ano?'var(--azul-medio)':'var(--cinza-linha)'};
+        background:${a===calState.ano?'var(--azul-fundo)':'var(--branco)'};
+        color:${a===calState.ano?'var(--azul-medio)':'var(--cinza-texto)'};
+        font-size:12px; font-weight:${a===calState.ano?'700':'500'};
+        cursor:pointer; font-family:var(--fonte);
+      ">${a}</button>`).join('');
+  }
+  el.style.display = 'block';
+}
+
+function fecharSeletorAno() {
+  const el = document.getElementById('cal-seletor-ano');
+  if (el) el.style.display = 'none';
+}
+
+function irParaAno(ano) {
+  calState.ano = ano;
+  fecharSeletorAno();
+  if (comAtual) renderCalDias(comAtual);
+}
+
+
+/* ── Init ── */
+const params = new URLSearchParams(location.search);
+const id = params.get('id');
+const com = (typeof COMISSOES !== 'undefined' ? COMISSOES : []).find(c => c.id === id);
+if (com) { renderPage(com); }
+else {
+  document.getElementById('app').innerHTML = `
+    <div style="padding:60px 20px;text-align:center;color:var(--cinza-leve)">
+      <h2 style="font-size:16px;margin-bottom:8px">Comissão não encontrada</h2>
+      <p style="font-size:13px;margin-bottom:16px">O identificador "<strong>${id||'?'}</strong>" não corresponde a nenhuma comissão cadastrada.</p>
+      <a href="index.html" style="color:var(--azul-medio);font-weight:600">← Voltar ao painel</a>
+    </div>`;
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comissões Permanentes — TRE-RN</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --azul-escuro:#1a3a6b;--azul-medio:#2563a8;--azul-claro:#4a90d9;
+      --azul-fundo:#eef3fa;--azul-borda:#c8d8ec;--cinza-texto:#2c2c2c;
+      --cinza-leve:#6b7280;--cinza-bg:#f5f7fa;--cinza-linha:#e5e9f0;
+      --branco:#ffffff;--verde:#1a7a4a;--verde-bg:#d4eddf;
+      --fonte:'Segoe UI',Calibri,Arial,sans-serif;--raio:6px;--raio-g:10px;
+      --sombra:0 2px 6px rgba(26,58,107,.09),0 8px 24px rgba(26,58,107,.10);
+      --sombra-hover:0 8px 32px rgba(26,58,107,.22);
+    }
+    body{font-family:var(--fonte);background:var(--cinza-bg);color:var(--cinza-texto);font-size:14px;line-height:1.5;}
+    .controles{background:var(--azul-escuro);padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.18);}
+    .busca-wrap{position:relative;flex:1;min-width:180px;}
+    .busca-wrap input{width:100%;border:1.5px solid rgba(255,255,255,.25);border-radius:var(--raio);padding:6px 30px 6px 10px;font-size:13px;font-family:var(--fonte);background:rgba(255,255,255,.12);color:var(--branco);outline:none;transition:border-color .2s,background .2s;}
+    .busca-wrap input::placeholder{color:rgba(255,255,255,.5);}
+    .busca-wrap input:focus{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.18);}
+    .btn-limpar-busca{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.6);cursor:pointer;font-size:14px;line-height:1;padding:0;display:none;}
+    .btn-limpar-busca.vis{display:block;}
+    .ctrl-select{border:1.5px solid rgba(255,255,255,.25);border-radius:var(--raio);padding:6px 10px;font-size:12.5px;font-family:var(--fonte);background:rgba(255,255,255,.12);color:var(--branco);outline:none;cursor:pointer;}
+    .ctrl-select option{background:var(--azul-escuro);color:var(--branco);}
+    .ctrl-count{font-size:11.5px;color:rgba(255,255,255,.5);white-space:nowrap;}
+    .btn-repres{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);border-radius:var(--raio);color:var(--branco);font-size:12px;font-family:var(--fonte);font-weight:600;padding:5px 12px;cursor:pointer;white-space:nowrap;transition:background .15s;}
+    .btn-repres:hover{background:rgba(255,255,255,.25);}
+    .kpis{display:flex;gap:10px;padding:14px 16px 0;flex-wrap:wrap;}
+    .kpi{background:var(--branco);border:1px solid var(--cinza-linha);border-radius:var(--raio);padding:10px 16px;box-shadow:var(--sombra);flex:1;min-width:100px;display:flex;flex-direction:column;gap:2px;}
+    .kpi .val{font-size:22px;font-weight:800;color:var(--azul-escuro);line-height:1;}
+    .kpi .val.verde{color:var(--verde);}
+    .kpi .lbl{font-size:10.5px;color:var(--cinza-leve);font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+    #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:22px;padding:18px 20px 56px;}
+    .card{background:var(--branco);border-radius:var(--raio-g);box-shadow:var(--sombra);overflow:hidden;display:flex;transition:box-shadow .2s,transform .18s;text-decoration:none;color:inherit;}
+    .card:hover{box-shadow:var(--sombra-hover);transform:translateY(-2px);}
+    .card-esq{width:76px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 10px;gap:0;}
+    .card-sigla{font-size:14px;font-weight:900;letter-spacing:.12em;color:rgba(255,255,255,.98);text-align:center;line-height:1.2;text-transform:uppercase;}
+    .card-div{display:none;}
+    .card-membros-num{display:none;}
+    .card-membros-lbl{display:none;}
+    .card-dir{flex:1;display:flex;flex-direction:column;min-width:0;}
+    .card-nome-faixa{padding:12px 16px 11px;}
+    .card-nome{font-size:15px;font-weight:800;color:var(--azul-escuro);line-height:1.3;}
+    .card-dados{flex:1;padding:10px 16px 0;display:flex;flex-direction:column;gap:6px;}
+    .card-linha{display:flex;gap:8px;align-items:baseline;}
+    .card-linha label{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--cinza-leve);min-width:88px;flex-shrink:0;}
+    .card-linha span{font-size:12.5px;font-weight:700;color:var(--cinza-texto);line-height:1.3;}
+    .card-linha span.norma{font-size:12px;font-weight:600;color:var(--azul-medio);}
+    .card-rodape{border-top:1px solid var(--cinza-linha);margin-top:12px;padding:8px 16px;display:flex;justify-content:flex-end;}
+    .card-btn{font-size:12px;font-weight:600;background:none;border:none;cursor:pointer;font-family:var(--fonte);text-decoration:none;display:flex;align-items:center;gap:4px;}
+    .card-btn:hover{text-decoration:underline;}
+    .vazio{grid-column:1/-1;text-align:center;padding:50px 20px;color:var(--cinza-leve);font-size:13.5px;}
+    .overlay{display:none;position:fixed;inset:0;background:rgba(10,25,55,.48);z-index:200;align-items:flex-start;justify-content:center;padding:24px 14px;overflow-y:auto;backdrop-filter:blur(2px);}
+    .overlay.vis{display:flex;}
+    .modal{background:var(--branco);border-radius:var(--raio-g);width:100%;max-width:860px;box-shadow:0 8px 40px rgba(10,25,55,.22);overflow:hidden;animation:modalIn .18s ease;}
+    @keyframes modalIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .modal-header{background:var(--azul-escuro);padding:14px 18px;display:flex;align-items:center;gap:10px;}
+    .modal-header-txt{flex:1;}
+    .modal-header h2{font-size:15px;font-weight:700;color:var(--branco);}
+    .modal-header p{font-size:11.5px;color:rgba(255,255,255,.6);}
+    .btn-fechar{background:rgba(255,255,255,.12);border:none;border-radius:50%;width:28px;height:28px;color:var(--branco);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0;}
+    .btn-fechar:hover{background:rgba(255,255,255,.24);}
+    .modal-body{padding:18px;}
+    .modal-desc{font-size:12.5px;color:var(--cinza-leve);margin-bottom:14px;}
+    .repres-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;}
+    .repres-card{border:1px solid var(--cinza-linha);border-radius:var(--raio);padding:11px 13px;background:var(--cinza-bg);}
+    .repres-unidade{font-size:12.5px;font-weight:700;color:var(--azul-escuro);margin-bottom:4px;line-height:1.3;}
+    .repres-qtd{font-size:22px;font-weight:800;color:var(--azul-medio);line-height:1;margin-bottom:2px;}
+    .repres-label{font-size:10px;color:var(--cinza-leve);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;}
+    .repres-siglas{display:flex;flex-wrap:wrap;gap:4px;}
+    .repres-sigla-link{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:3px;background:var(--azul-fundo);color:var(--azul-medio);border:1px solid var(--azul-borda);text-decoration:none;transition:background .12s;}
+    .repres-sigla-link:hover{background:var(--azul-borda);}
+
+    .kpi.clicavel{cursor:pointer;transition:box-shadow .15s,transform .15s;border-top:3px solid var(--azul-claro);}
+    .kpi.clicavel:hover{box-shadow:0 4px 16px rgba(26,58,107,.18);transform:translateY(-1px);}
+    .kpi.clicavel .lbl{display:flex;align-items:center;gap:4px;}
+    .kpi.clicavel .lbl::after{content:'';}
+    /* Modal horas */
+    .th-horas{width:100%;border-collapse:collapse;font-size:12.5px;}
+    .th-horas th{background:var(--azul-fundo);color:var(--azul-escuro);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:7px 11px;text-align:center;border-bottom:1px solid var(--azul-borda);white-space:nowrap;}
+    .th-horas th:first-child{text-align:left;}
+    .th-horas th:nth-child(2){text-align:left;}
+    .th-horas td:nth-child(2){text-align:left;color:var(--cinza-texto);}
+    .th-horas td{padding:7px 11px;border-bottom:1px solid var(--cinza-linha);color:var(--cinza-leve);vertical-align:top;text-align:center;}
+    .th-horas tr:last-child td{border-bottom:none;font-weight:700;color:var(--cinza-texto);background:var(--cinza-bg);}
+    .th-horas td:first-child{font-weight:600;color:var(--cinza-texto);text-align:left;}
+    .th-horas td.num{text-align:center;}
+    .th-horas td.zero{color:var(--cinza-linha);}
+    .cell-dur{font-size:12.5px;font-weight:700;color:var(--cinza-texto);display:block;line-height:1.3;}
+    .cell-reun{font-size:10.5px;color:var(--cinza-leve);font-weight:400;display:block;line-height:1.3;}
+    .th-horas td.zero .cell-dur{color:var(--cinza-linha);}
+    .th-horas td.zero .cell-reun{display:none;}
+    .th-horas tr:hover td{background:var(--azul-fundo);}
+    .th-horas tr:last-child:hover td{background:var(--cinza-bg);}
+    .tabela-scroll{overflow-x:auto;border-radius:var(--raio);box-shadow:var(--sombra);}
+    @media(max-width:600px){.kpis{padding:10px 10px 0;}#grid{grid-template-columns:1fr;padding:10px 10px 48px;}.controles{padding:8px 10px;gap:7px;}.kpi .val{font-size:18px;}}
+  </style>
+</head>
+<body>
+<div class="controles">
+  <div class="busca-wrap">
+    <input type="text" id="busca" placeholder="&#128269; Buscar comissão, membro, sigla…" autocomplete="off" spellcheck="false" oninput="filtrar()">
+    <button class="btn-limpar-busca" id="btnLimpar" onclick="limparBusca()" title="Limpar">✕</button>
+  </div>
+  <select class="ctrl-select" id="filtroArea" onchange="filtrar()">
+    <option value="">Todas as áreas</option>
+  </select>
+  <button class="btn-repres" onclick="abrirRepresentatividade()">Representatividade por unidade</button>
+  <span class="ctrl-count" id="ctrlCount"></span>
+</div>
+<div class="kpis" id="kpis"></div>
+<div id="grid"></div>
+<div class="overlay" id="overlayRepres" onclick="fecharOverlay(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-header-txt">
+        <h2>Representatividade por Unidade</h2>
+        <p>Quantidade de comissões em que cada unidade tem representação</p>
+      </div>
+      <button class="btn-fechar" onclick="fecharRepresentatividade()">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-desc">Clique na sigla de uma comissão para acessar seus detalhes. Exibindo apenas unidades com composição cadastrada.</p>
+      <div class="repres-grid" id="represGrid"></div>
+    </div>
+  </div>
+</div>
+<!-- Modal gênero -->
+<div class="overlay" id="overlayGenero" onclick="fecharOverlayGenero(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-header-txt">
+        <h2>Participação por gênero</h2>
+        <p>Distribuição de integrantes por comissão — apenas comissões com dados cadastrados</p>
+      </div>
+      <button class="btn-fechar" onclick="fecharGenero()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="tabela-scroll" id="tabelaGeneroWrap"></div>
+    </div>
+  </div>
+</div>
+<!-- Modal tabela de horas -->
+<div class="overlay" id="overlayHoras" onclick="fecharOverlayHoras(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-header-txt">
+        <h2>Horas de reunião por comissão e ano</h2>
+        <p>Baseado nas durações informadas em cada ata e reunião prevista</p>
+      </div>
+      <button class="btn-fechar" onclick="fecharHoras()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="tabela-scroll" id="tabelaHorasWrap"></div>
+    </div>
+  </div>
+</div>
+<script src="dados.js"></script>
+<script>
+function esc(s){if(!s)return '';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function renderKpis(){
+  const total=COMISSOES.length;
+  const membros=COMISSOES.reduce((s,c)=>s+(c.membros_total||0),0);
+  let fem=0,tot=0;
+  COMISSOES.forEach(c=>{if(c.genero){fem+=c.genero.fem;tot+=c.genero.fem+c.genero.masc;}});
+  const pctFem=tot?Math.round(fem/tot*100):null;
+  const minAno=COMISSOES.reduce((s,c)=>s+minutosPorAno(c,ANO_ATUAL),0);
+  document.getElementById('kpis').innerHTML=`
+    <div class="kpi"><span class="val">${total}</span><span class="lbl">Comissões</span></div>
+    <div class="kpi"><span class="val">${membros||'—'}</span><span class="lbl">Membros cadastrados</span></div>
+    <div class="kpi clicavel" onclick="abrirGenero()" title="Clique para ver o detalhamento por comissão"><span class="val" style="display:flex;align-items:baseline;gap:6px">${pctFem!==null?pctFem+'%':'—'}<span style="font-size:13px;opacity:.5">♀</span></span><span class="lbl">Participação feminina</span></div>
+    <div class="kpi clicavel" onclick="abrirHoras()" title="Clique para ver o detalhamento por comissão e ano">
+      <span class="val" style="display:flex;align-items:baseline;gap:6px">${formatMin(minAno)}<span style="font-size:13px;opacity:.5" title="Ver tabela detalhada">⊞</span></span>
+      <span class="lbl">Horas de reunião / ${ANO_ATUAL}</span>
+    </div>`;
+}
+
+/* Suaviza a cor da comissão para a coluna lateral (opção A):
+   desatura parcialmente e clareia, reduzindo o impacto visual
+   quando muitas comissões aparecem lado a lado. */
+function softenCor(hex) {
+  const r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+  const avg=Math.round((r+g+b)/3);
+  const sr=Math.round(r*0.45+avg*0.55), sg=Math.round(g*0.45+avg*0.55), sb=Math.round(b*0.45+avg*0.55);
+  const lr=Math.round(sr+(255-sr)*0.35), lg=Math.round(sg+(255-sg)*0.35), lb=Math.round(sb+(255-sb)*0.35);
+  return `rgb(${lr},${lg},${lb})`;
+}
+
+function hexToRgba(hex,alpha){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return `rgba(${r},${g},${b},${alpha})`;}
+
+function renderCards(lista){
+  const grid=document.getElementById('grid');
+  const count=document.getElementById('ctrlCount');
+  if(!lista.length){grid.innerHTML='<div class="vazio">Nenhuma comissão encontrada.</div>';count.textContent='';return;}
+  count.textContent=lista.length===COMISSOES.length?`${lista.length} comissões`:`${lista.length} de ${COMISSOES.length}`;
+  // Norma de designação vigente
+  const normaDes = c => {
+    const vig = (c.normas_designacao||[]).find(n=>n.vigente);
+    return vig ? vig.nome : (c.base_legal && c.base_legal.nome !== 'A confirmar' ? c.base_legal.nome : '—');
+  };
+  grid.innerHTML=lista.map(c=>`
+    <div class="card"
+         data-busca="${esc(c.nome)} ${esc(c.sigla)} ${esc(c.area)} ${(c.composicao||[]).map(m=>m.membro).join(' ')}"
+         data-area="${esc(c.area)}">
+      <div class="card-esq" style="background:${softenCor(c.cor)}">
+        <div class="card-sigla">${esc(c.sigla)}</div>
+        <div class="card-div"></div>
+        <div class="card-membros-num">${c.membros_total??'—'}</div>
+        <div class="card-membros-lbl">membros</div>
+      </div>
+      <div class="card-dir">
+        <div class="card-nome-faixa" style="background:${hexToRgba(c.cor,0.09)}">
+          <div class="card-nome">${esc(c.nome)}</div>
+        </div>
+        <div class="card-dados">
+          <div class="card-linha"><label>Área</label><span>${esc(c.area)}</span></div>
+          <div class="card-linha"><label>Presidente</label><span>${esc(c.presidencia.nome)}</span></div>
+          <div class="card-linha"><label>Membros</label><span>${c.membros_total??'—'}</span></div>
+          <div class="card-linha"><label>Periodicidade</label><span>${esc(c.periodicidade)}</span></div>
+          <div class="card-linha"><label>Designação</label><span class="norma">${esc(normaDes(c))}</span></div>
+        </div>
+        <div class="card-rodape">
+          <a class="card-btn" href="comissao.html?id=${c.id}" style="color:${c.cor}">Ver detalhes →</a>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function filtrar(){
+  const q=document.getElementById('busca').value.trim().toLowerCase();
+  const area=document.getElementById('filtroArea').value;
+  document.getElementById('btnLimpar').classList.toggle('vis',q.length>0);
+  const lista=COMISSOES.filter(c=>{
+    const txt=`${c.nome} ${c.sigla} ${c.area} ${(c.composicao||[]).map(m=>m.membro).join(' ')}`.toLowerCase();
+    return(!q||txt.includes(q))&&(!area||c.area===area);
+  });
+  renderCards(lista);
+}
+
+function limparBusca(){document.getElementById('busca').value='';document.getElementById('btnLimpar').classList.remove('vis');filtrar();}
+
+function inicializarFiltros(){
+  const sel=document.getElementById('filtroArea');
+  getAreas().forEach(a=>{const opt=document.createElement('option');opt.value=a;opt.textContent=a;sel.appendChild(opt);});
+}
+
+
+
+
+function abrirGenero(){
+  const comComDados = COMISSOES.filter(c=>c.genero);
+  let totFem=0, totMasc=0;
+  comComDados.forEach(c=>{ totFem+=c.genero.fem; totMasc+=c.genero.masc; });
+  const totGeral = totFem + totMasc;
+
+  const linhas = comComDados.map(c=>{
+    const tot = c.genero.fem + c.genero.masc;
+    const pctF = Math.round(c.genero.fem/tot*100);
+    const pctM = 100 - pctF;
+    return `<tr>
+      <td>${esc(c.sigla)}</td>
+      <td style="max-width:220px;font-size:12px">${esc(c.nome)}</td>
+      <td class="num">${tot}</td>
+      <td class="num">${c.genero.fem}</td>
+      <td class="num">${pctF}%</td>
+      <td class="num">${c.genero.masc}</td>
+      <td class="num">${pctM}%</td>
+    </tr>`;
+  }).join('');
+
+  const pctFTot = totGeral ? Math.round(totFem/totGeral*100) : 0;
+  const pctMTot = 100 - pctFTot;
+
+  document.getElementById('tabelaGeneroWrap').innerHTML=`
+    <table class="th-horas">
+      <thead>
+        <tr>
+          <th>Sigla</th>
+          <th>Comissão</th>
+          <th class="num">Total</th>
+          <th class="num">Feminino</th>
+          <th class="num">%</th>
+          <th class="num">Masculino</th>
+          <th class="num">%</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${linhas}
+        <tr>
+          <td colspan="2">Total geral</td>
+          <td class="num">${totGeral}</td>
+          <td class="num">${totFem}</td>
+          <td class="num">${pctFTot}%</td>
+          <td class="num">${totMasc}</td>
+          <td class="num">${pctMTot}%</td>
+        </tr>
+      </tbody>
+    </table>`;
+
+  document.getElementById('overlayGenero').classList.add('vis');
+  document.body.style.overflow='hidden';
+}
+
+function fecharGenero(){document.getElementById('overlayGenero').classList.remove('vis');document.body.style.overflow='';}
+function fecharOverlayGenero(e){if(e.target===document.getElementById('overlayGenero'))fecharGenero();}
+function reunioesPorAno(com, ano) {
+  let count = 0;
+  (com.atas || []).forEach(a => {
+    if (a.url && a.ano === String(ano)) count++;
+  });
+  (com.proximas || []).forEach(r => {
+    if (r.data && r.data.startsWith(String(ano))) count++;
+  });
+  return count;
+}
+function abrirHoras(){
+  // Coletar todos os anos com atividade
+  const anosSet = new Set();
+  COMISSOES.forEach(c=>{
+    (c.atas||[]).forEach(a=>{ if(a.url) anosSet.add(parseInt(a.ano)); });
+    (c.proximas||[]).forEach(r=>{ if(r.data) anosSet.add(parseInt(r.data.slice(0,4))); });
+  });
+  const anos = [...anosSet].sort();
+
+  // Calcular totais por comissão e por ano
+  const totPorAno = {};
+  anos.forEach(a=>totPorAno[a]=0);
+
+  const linhas = COMISSOES.map(c=>{
+    let totCom = 0;
+    const porAno = {};
+    anos.forEach(a=>{
+      const min = minutosPorAno(c,a);
+      porAno[a] = min;
+      totCom += min;
+      totPorAno[a] += min;
+    });
+    return { sigla:c.sigla, nome:c.nome, porAno, totCom };
+  });
+
+  const totGeral = anos.reduce((s,a)=>s+totPorAno[a],0);
+
+  const thAnos = anos.map(a=>`<th class="num">${a}</th>`).join('');
+  const tdAnos = linha => anos.map(a=>{
+    const min = linha.porAno[a];
+    const reun = reunioesPorAno(COMISSOES.find(c=>c.sigla===linha.sigla), a);
+    const isEmpty = !min;
+    return `<td class="num${isEmpty?' zero':''}">
+      <span class="cell-dur">${formatMin(min)}</span>
+      ${!isEmpty ? `<span class="cell-reun">${reun} ${reun===1?'reunião':'reuniões'}</span>` : ''}
+    </td>`;
+  }).join('');
+  const totReunPorAno = {};
+  anos.forEach(a=>{ totReunPorAno[a] = COMISSOES.reduce((s,c)=>s+reunioesPorAno(c,a),0); });
+  const totReunGeral = anos.reduce((s,a)=>s+totReunPorAno[a],0);
+  const tdTotAno = anos.map(a=>`<td class="num">
+    <span class="cell-dur">${formatMin(totPorAno[a])}</span>
+    ${totReunPorAno[a] ? `<span class="cell-reun">${totReunPorAno[a]} ${totReunPorAno[a]===1?'reunião':'reuniões'}</span>` : ''}
+  </td>`).join('');
+
+  const tbody = linhas.map(l=>`
+    <tr>
+      <td title="${esc(l.nome)}">${esc(l.sigla)}</td>
+      ${tdAnos(l)}
+      <td class="num" style="color:var(--azul-medio)">
+        <span class="cell-dur" style="color:var(--azul-medio)">${formatMin(l.totCom)}</span>
+        <span class="cell-reun">${anos.reduce((s,a)=>s+reunioesPorAno(COMISSOES.find(c=>c.sigla===l.sigla),a),0)} reuniões</span>
+      </td>
+    </tr>`).join('');
+
+  document.getElementById('tabelaHorasWrap').innerHTML=`
+    <table class="th-horas">
+      <thead><tr><th>Comissão</th>${thAnos}<th class="num">Total</th></tr></thead>
+      <tbody>
+        ${tbody}
+        <tr>
+          <td>Total por ano</td>
+          ${tdTotAno}
+          <td class="num" style="color:var(--azul-escuro)">
+            <span class="cell-dur" style="color:var(--azul-escuro)">${formatMin(totGeral)}</span>
+            <span class="cell-reun">${totReunGeral} ${totReunGeral===1?'reunião':'reuniões'}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>`;
+
+  document.getElementById('overlayHoras').classList.add('vis');
+  document.body.style.overflow='hidden';
+}
+
+function fecharHoras(){document.getElementById('overlayHoras').classList.remove('vis');document.body.style.overflow='';}
+function fecharOverlayHoras(e){if(e.target===document.getElementById('overlayHoras'))fecharHoras();}
+function abrirRepresentatividade(){
+  const mapa={};
+  COMISSOES.forEach(c=>{
+    (c.composicao||[]).forEach(m=>{
+      const u=m.unidade;
+      if(!mapa[u])mapa[u]=[];
+      if(!mapa[u].find(x=>x.sigla===c.sigla))mapa[u].push({sigla:c.sigla,id:c.id});
+    });
+  });
+  const ord=Object.entries(mapa).sort((a,b)=>b[1].length-a[1].length);
+  document.getElementById('represGrid').innerHTML=ord.map(([u,cs])=>`
+    <div class="repres-card">
+      <div class="repres-unidade">${esc(u)}</div>
+      <div class="repres-qtd">${cs.length}</div>
+      <div class="repres-label">${cs.length===1?'comissão':'comissões'}</div>
+      <div class="repres-siglas">${cs.map(c=>`<a class="repres-sigla-link" href="comissao.html?id=${c.id}">${esc(c.sigla)}</a>`).join('')}</div>
+    </div>`).join('');
+  document.getElementById('overlayRepres').classList.add('vis');
+  document.body.style.overflow='hidden';
+}
+
+function fecharRepresentatividade(){document.getElementById('overlayRepres').classList.remove('vis');document.body.style.overflow='';}
+function fecharOverlay(e){if(e.target===document.getElementById('overlayRepres'))fecharRepresentatividade();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){fecharRepresentatividade();fecharHoras();fecharGenero();}});
+
+inicializarFiltros();
+renderKpis();
+renderCards(COMISSOES);
+</script>
+</body>
+</html>
