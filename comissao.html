@@ -56,7 +56,7 @@
     .ficha span small { display:block; font-size:11px; color:var(--cinza-leve); font-weight:400; }
     .ficha.span2 { grid-column:span 2; }
     /* ── Tabela composição ── */
-    .tabela-wrap { overflow-x:auto; border-radius:var(--raio); box-shadow:var(--sombra); }
+    .tabela-wrap { overflow-x:auto; border-radius:var(--raio); box-shadow:var(--sombra); -webkit-overflow-scrolling:touch; }
     table { width:100%; border-collapse:collapse; font-size:13px; background:var(--branco); }
     thead th { background:var(--azul-fundo); color:var(--azul-escuro); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:8px 11px; text-align:left; border-bottom:1px solid var(--azul-borda); }
     tbody td { padding:8px 11px; border-bottom:1px solid var(--cinza-linha); color:var(--cinza-leve); vertical-align:top; }
@@ -130,7 +130,7 @@
     .st-informativa { background:var(--azul-fundo);  color:var(--azul-medio); }
     .delib-dashboard { display:flex; flex-direction:column; gap:20px; }
     .delib-kpis { display:flex; gap:10px; flex-wrap:wrap; }
-    .delib-kpi { background:var(--branco); border:1px solid var(--cinza-linha); border-radius:var(--raio); padding:10px 16px; box-shadow:var(--sombra); flex:1; min-width:90px; display:flex; flex-direction:column; gap:2px; cursor:pointer; transition:box-shadow .15s,transform .12s; }
+    .delib-kpi { background:var(--branco); border:1px solid var(--cinza-linha); border-radius:var(--raio); padding:8px 12px; box-shadow:var(--sombra); flex:1; min-width:72px; display:flex; flex-direction:column; gap:2px; cursor:pointer; transition:box-shadow .15s,transform .12s; }
     .delib-kpi:hover { box-shadow:0 4px 16px rgba(26,58,107,.16); transform:translateY(-1px); }
     .delib-kpi .dk-val { font-size:24px; font-weight:800; line-height:1; }
     .delib-kpi .dk-lbl { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--cinza-leve); }
@@ -138,7 +138,7 @@
     .delib-chart-titulo { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--cinza-leve); margin-bottom:14px; padding-bottom:6px; border-bottom:1px solid var(--cinza-linha); }
     .delib-chart-rows { display:flex; flex-direction:column; gap:10px; }
     .delib-chart-row { display:flex; align-items:center; gap:10px; }
-    .delib-chart-ano { font-size:12px; font-weight:700; color:var(--azul-escuro); min-width:36px; text-align:right; }
+    .delib-chart-ano { font-size:11px; font-weight:700; color:var(--azul-escuro); min-width:32px; text-align:right; }
     .delib-chart-track { flex:1; height:22px; display:flex; border-radius:4px; overflow:hidden; background:var(--cinza-linha); }
     .delib-chart-seg { height:100%; display:flex; align-items:center; justify-content:center; }
     .delib-chart-seg span { font-size:10px; font-weight:700; color:rgba(255,255,255,.9); padding:0 4px; white-space:nowrap; }
@@ -277,13 +277,57 @@
     /* ── Responsivo ── */
     @media (max-width:700px) {
       body { padding:10px 10px 48px; }
-      .card-topo-esq { width:80px; }
-      .card-topo-sigla { font-size:13px; }
-      .card-topo-membros { font-size:18px; }
-      .card-topo-nome { font-size:16px; }
+
+      /* Cabeçalho */
+      .card-topo-esq { width:64px; padding:10px 8px; }
+      .card-topo-sigla { font-size:12px; letter-spacing:.08em; }
+      .card-topo-nome { font-size:15px; }
+      .card-topo-nome-faixa { padding:0 12px; min-height:56px; }
+
+      /* Abas — indicador de scroll */
+      .abas-nav { padding:0 10px; }
+      .abas-nav::after {
+        content:''; position:absolute; right:0; top:0; bottom:0;
+        width:24px;
+        background:linear-gradient(to right,transparent,var(--branco));
+        pointer-events:none;
+      }
+      .aba-btn { padding:9px 10px; font-size:12px; }
+      .aba-conteudo { padding:12px 10px 24px; }
+
+      /* Fichas */
       .fichas { grid-template-columns:1fr; }
       .ficha.span2 { grid-column:span 1; }
-      .aba-conteudo { padding:14px 12px 24px; }
+
+      /* Composição — tabela scroll */
+      table { font-size:12px; }
+      thead th { padding:6px 8px; font-size:10px; }
+      tbody td { padding:6px 8px; }
+
+      /* Deliberações */
+      .delib-kpis { gap:6px; }
+      .delib-kpi .dk-val { font-size:20px; }
+      .delib-kpi .dk-lbl { font-size:9px; }
+      .delib-lista-header { gap:6px; }
+      .delib-filtro-btn { padding:3px 9px; font-size:11px; }
+      .delib-ata-item { padding:7px 8px 7px 14px; }
+
+      /* Calendário */
+      .cal-layout { grid-template-columns:1fr; }
+      .cal-col-esq { position:static; }
+      .prox-item { gap:10px; padding:10px 12px; }
+      .prox-dia { font-size:20px; }
+
+      /* Normas timeline */
+      .desig-timeline { padding-left:12px; }
+    }
+
+    @media (max-width:400px) {
+      .card-topo-esq { width:52px; padding:8px 6px; }
+      .card-topo-sigla { font-size:10px; }
+      .card-topo-nome { font-size:13px; }
+      .aba-btn { padding:8px 8px; font-size:11px; }
+      .ano-num { font-size:18px; }
     }
 
     /* ── Cards de ano (Atas e Deliberações) ── */
@@ -315,6 +359,11 @@
       border-radius: var(--raio);
       overflow: hidden;
       grid-column: span 2;
+    }
+    @media(max-width:500px){
+      .ficha-trilinha { grid-template-columns: 1fr; }
+      .ficha-tl-item { border-right:none; border-bottom:1px solid var(--cinza-linha); }
+      .ficha-tl-item:last-child { border-bottom:none; }
     }
     .ficha-tl-item {
       padding: 8px 12px;
