@@ -16,14 +16,14 @@
       --sombra-hover:0 8px 32px rgba(26,58,107,.22);
     }
     body{font-family:var(--fonte);background:var(--cinza-bg);color:var(--cinza-texto);font-size:14px;line-height:1.5;}
-    .controles{background:var(--azul-escuro);padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.18);}
-    .busca-wrap{position:relative;flex:1;min-width:180px;}
+    .controles{background:var(--azul-escuro);padding:10px 16px;display:flex;align-items:center;gap:8px;flex-wrap:nowrap;position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.18);}
+    .busca-wrap{position:relative;flex:1;min-width:140px;max-width:320px;}
     .busca-wrap input{width:100%;border:1.5px solid rgba(255,255,255,.25);border-radius:var(--raio);padding:6px 30px 6px 10px;font-size:13px;font-family:var(--fonte);background:rgba(255,255,255,.12);color:var(--branco);outline:none;transition:border-color .2s,background .2s;}
     .busca-wrap input::placeholder{color:rgba(255,255,255,.5);}
     .busca-wrap input:focus{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.18);}
     .btn-limpar-busca{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.6);cursor:pointer;font-size:14px;line-height:1;padding:0;display:none;}
     .btn-limpar-busca.vis{display:block;}
-    .ctrl-select{border:1.5px solid rgba(255,255,255,.25);border-radius:var(--raio);padding:6px 10px;font-size:12.5px;font-family:var(--fonte);background:rgba(255,255,255,.12);color:var(--branco);outline:none;cursor:pointer;}
+    .ctrl-select{border:1.5px solid rgba(255,255,255,.25);border-radius:var(--raio);padding:6px 10px;font-size:12.5px;font-family:var(--fonte);background:rgba(255,255,255,.12);color:var(--branco);outline:none;cursor:pointer;max-width:180px;}
     .ctrl-select option{background:var(--azul-escuro);color:var(--branco);}
     .ctrl-count{font-size:11.5px;color:rgba(255,255,255,.5);white-space:nowrap;}
     .btn-repres{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);border-radius:var(--raio);color:var(--branco);font-size:12px;font-family:var(--fonte);font-weight:600;padding:5px 12px;cursor:pointer;white-space:nowrap;transition:background .15s;}
@@ -98,6 +98,8 @@
     .tabela-scroll{overflow-x:auto;border-radius:var(--raio);box-shadow:var(--sombra);}
     @media(max-width:700px){
       .controles{padding:8px 10px;gap:7px;flex-wrap:wrap;}
+      .busca-wrap{max-width:none;}
+      .ctrl-select{max-width:none;}
       .btn-repres{font-size:11px;padding:4px 9px;}
       .kpis{padding:10px 10px 0;gap:7px;}
       .kpi{padding:8px 12px;min-width:80px;}
@@ -125,8 +127,8 @@
   <select class="ctrl-select" id="filtroArea" onchange="filtrar()">
     <option value="">Todas as áreas</option>
   </select>
-  <button class="btn-repres" onclick="abrirRepresentatividade()">Representatividade por unidade</button>
-  <span class="ctrl-count" id="ctrlCount"></span>
+  <button class="btn-repres" onclick="abrirRepresentatividade()">Representatividade</button>
+
 </div>
 <div class="kpis" id="kpis"></div>
 <div id="grid"></div>
@@ -141,7 +143,7 @@
     </div>
     <div class="modal-body">
       <p class="modal-desc">Clique na sigla de uma comissão para acessar seus detalhes. Exibindo apenas unidades com composição cadastrada.</p>
-      <div class="repres-grid" id="represGrid"></div>
+      <div id="represGrid"></div>
     </div>
   </div>
 </div>
@@ -211,9 +213,7 @@ function hexToRgba(hex,alpha){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex
 
 function renderCards(lista){
   const grid=document.getElementById('grid');
-  const count=document.getElementById('ctrlCount');
   if(!lista.length){grid.innerHTML='<div class="vazio">Nenhuma comissão encontrada.</div>';count.textContent='';return;}
-  count.textContent=lista.length===COMISSOES.length?`${lista.length} comissões`:`${lista.length} de ${COMISSOES.length}`;
   // Norma de designação vigente
   const normaDes = c => {
     const vig = (c.normas_designacao||[]).find(n=>n.vigente);
@@ -223,14 +223,14 @@ function renderCards(lista){
     <div class="card"
          data-busca="${esc(c.nome)} ${esc(c.sigla)} ${esc(c.area)} ${(c.composicao||[]).map(m=>m.membro).join(' ')}"
          data-area="${esc(c.area)}">
-      <div class="card-esq" style="background:${softenCor(c.cor)}">
+      <div class="card-esq" style="background:#4a6d8c">
         <div class="card-sigla">${esc(c.sigla)}</div>
         <div class="card-div"></div>
         <div class="card-membros-num">${c.membros_total??'—'}</div>
         <div class="card-membros-lbl">membros</div>
       </div>
       <div class="card-dir">
-        <div class="card-nome-faixa" style="background:${hexToRgba(c.cor,0.09)}">
+        <div class="card-nome-faixa" style="background:var(--azul-fundo)">
           <div class="card-nome">${esc(c.nome)}</div>
         </div>
         <div class="card-dados">
@@ -241,7 +241,7 @@ function renderCards(lista){
           <div class="card-linha"><label>Designação</label><span class="norma">${esc(normaDes(c))}</span></div>
         </div>
         <div class="card-rodape">
-          <a class="card-btn" href="comissao.html?id=${c.id}" style="color:${c.cor}">Ver detalhes →</a>
+          <a class="card-btn" href="comissao.html?id=${c.id}" style="color:var(--azul-medio)">Ver detalhes →</a>
         </div>
       </div>
     </div>`).join('');
@@ -421,13 +421,17 @@ function abrirRepresentatividade(){
     });
   });
   const ord=Object.entries(mapa).sort((a,b)=>b[1].length-a[1].length);
-  document.getElementById('represGrid').innerHTML=ord.map(([u,cs])=>`
-    <div class="repres-card">
-      <div class="repres-unidade">${esc(u)}</div>
-      <div class="repres-qtd">${cs.length}</div>
-      <div class="repres-label">${cs.length===1?'comissão':'comissões'}</div>
-      <div class="repres-siglas">${cs.map(c=>`<a class="repres-sigla-link" href="comissao.html?id=${c.id}">${esc(c.sigla)}</a>`).join('')}</div>
-    </div>`).join('');
+  const linhasTabela = ord.map(([u,cs])=>`
+    <tr>
+      <td class="repres-td-unidade">${esc(u)}</td>
+      <td class="repres-td-num">${cs.length}</td>
+      <td><div class="repres-td-siglas">${cs.map(c=>`<a class="repres-sigla-link" href="comissao.html?id=${c.id}">${esc(c.sigla)}</a>`).join('')}</div></td>
+    </tr>`).join('');
+  document.getElementById('represGrid').innerHTML=`
+    <table class="repres-tabela">
+      <thead><tr><th>Unidade</th><th class="num">Comissões</th><th>Siglas</th></tr></thead>
+      <tbody>${linhasTabela}</tbody>
+    </table>`;
   document.getElementById('overlayRepres').classList.add('vis');
   document.body.style.overflow='hidden';
 }

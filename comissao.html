@@ -225,7 +225,6 @@
     .cal-dia.prevista.destacado { box-shadow: 0 0 0 2px var(--verde); }
     .cal-dia.realizada:hover, .cal-dia.prevista:hover { opacity: .85; }
     .r-dot { width: 4px; height: 4px; border-radius: 50%; margin-top: 1px; }
-    .r-dot.azul  { background: var(--azul-medio); }
     .r-dot.verde { background: var(--verde); }
     .cal-legenda { display: flex; flex-direction: column; gap: 5px; padding: 7px 10px 9px; border-top: 1px solid var(--cinza-linha); }
     .cl-it { display: flex; align-items: center; gap: 5px; font-size: 10.5px; color: var(--cinza-leve); }
@@ -391,12 +390,77 @@
       font-size: 14px; opacity: .35; transition: opacity .15s;
     }
     .ficha-membros-hint { display: none; }
+
+    /* ── Reuniões passadas no calendário ── */
+    .cal-dia.passada { background:#fef2f2; border-color:#fca5a5; cursor:pointer; }
+    .cal-dia.passada .dn { color:#b91c1c; font-weight:600; }
+    .cal-dia.passada:hover { opacity:.85; }
+    .r-dot.passada { background:#ef4444; }
+
+    /* ── Modal de pauta ── */
+    .modal-pauta-lista { display:flex; flex-direction:column; gap:6px; margin-top:4px; }
+    .modal-pauta-item {
+      display:flex; gap:10px; align-items:flex-start;
+      padding:7px 10px; background:var(--cinza-bg);
+      border-radius:var(--raio); border:1px solid var(--cinza-linha);
+    }
+    .modal-pauta-n { font-size:11px; color:var(--cinza-leve); min-width:18px; flex-shrink:0; padding-top:1px; }
+    .modal-pauta-txt { font-size:13px; color:var(--cinza-texto); line-height:1.4; flex:1; }
+    .modal-sem-pauta { font-size:13px; color:var(--cinza-leve); font-style:italic; padding:12px 0; }
+
+    /* ── Overlay / Modal genérico ── */
+    .overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(10,25,55,.48); z-index: 200;
+      align-items: flex-start; justify-content: center;
+      padding: 24px 14px; overflow-y: auto;
+      backdrop-filter: blur(2px);
+    }
+    .overlay.vis { display: flex; }
+    .modal {
+      background: var(--branco); border-radius: var(--raio-g);
+      width: 100%; max-width: 860px;
+      box-shadow: 0 8px 40px rgba(10,25,55,.22);
+      overflow: hidden; animation: modalIn .18s ease;
+    }
+    @keyframes modalIn {
+      from { opacity:0; transform:translateY(10px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .modal-header {
+      background: var(--azul-escuro); padding: 14px 18px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .modal-header-txt { flex: 1; }
+    .modal-header h2 { font-size: 15px; font-weight: 700; color: var(--branco); }
+    .modal-header p  { font-size: 11.5px; color: rgba(255,255,255,.6); }
+    .btn-fechar {
+      background: rgba(255,255,255,.12); border: none; border-radius: 50%;
+      width: 28px; height: 28px; color: var(--branco); font-size: 16px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background .15s; flex-shrink: 0;
+    }
+    .btn-fechar:hover { background: rgba(255,255,255,.24); }
+    .modal-body { padding: 18px; }
   </style>
 </head>
 <body>
 
 <div id="app"></div>
 
+<!-- Modal pauta de reunião -->
+<div class="overlay" id="overlayPauta" onclick="fecharOverlayPauta(event)">
+  <div class="modal" style="max-width:560px">
+    <div class="modal-header">
+      <div class="modal-header-txt">
+        <h2 id="modalPautaTitulo">Pauta da Reunião</h2>
+        <p id="modalPautaMeta"></p>
+      </div>
+      <button class="btn-fechar" onclick="fecharPauta()">×</button>
+    </div>
+    <div class="modal-body" id="modalPautaCorpo"></div>
+  </div>
+</div>
 <script src="dados.js"></script>
 <script>
 const mesesNomes  = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
@@ -434,14 +498,14 @@ function renderPage(c) {
   document.title = `${c.sigla} — TRE-RN`;
   document.getElementById('app').innerHTML = `
     <div class="pg-voltar"><a href="index.html" class="btn-voltar">← Todas as comissões</a></div>
-    <div class="card-moldura" style="border-color:${softenCor(c.cor)}">
+    <div class="card-moldura" style="border-color:#4a6d8c">
       <div class="card-topo">
-        <div class="card-topo-esq" style="background:${softenCor(c.cor)}">
+        <div class="card-topo-esq" style="background:#4a6d8c">
           <div class="card-topo-sigla">${esc(c.sigla)}</div>
 
         </div>
         <div class="card-topo-dir">
-          <div class="card-topo-nome-faixa" style="background:${hexToRgba(c.cor,0.08)}">
+          <div class="card-topo-nome-faixa" style="background:var(--azul-fundo)">
             <div class="card-topo-nome">${esc(c.nome)}</div>
           </div>
         </div>
@@ -555,7 +619,6 @@ function renderAtas(c) {
   const porAno = {};
   (c.atas||[]).forEach(a => { if(!porAno[a.ano])porAno[a.ano]=[]; porAno[a.ano].push(a); });
   const anosOrd   = Object.keys(porAno).sort((a,b)=>b-a);
-  const corSuave  = softenCor(c.cor);
   const anoCor    = String(new Date().getFullYear());
 
   const filtroHtml = `<div class="atas-filtro-bar" id="atas-filtro-${c.id}">
@@ -587,7 +650,7 @@ function renderAtas(c) {
       const semDados  = !a.url && !delibs.length && !(a.pauta||[]).length;
       return `<div class="ata-card-v2">
         <div class="ata-card-v2-header">
-          <div class="ata-card-v2-cor" style="background:${corSuave}"></div>
+          <div class="ata-card-v2-cor" style="background:#4a6d8c"></div>
           <div class="ata-card-v2-titulo-wrap">
             <div class="ata-card-v2-titulo">${esc(a.titulo)}</div>
             <div class="ata-card-v2-meta">${metaPartes.map((p,i)=>i===0?esc(p):`<span class="ata-card-v2-meta-sep">·</span>${esc(p)}`).join('')}</div>
@@ -786,11 +849,18 @@ function trocarAba(id, btn) {
 function renderCalendario(c) {
   const hoje = new Date();
   const proximas = c.proximas || [];
+  const _agora = new Date(); _agora.setHours(0,0,0,0);
+  const proximasFuturas = proximas.filter(r => {
+    if (!r.data) return false;
+    const dt = parseData(r.data);
+    return new Date(dt.y, dt.m, dt.d) >= _agora;
+  });
 
-  // Próximas reuniões — coluna direita
-  const proxHtml = !proximas.length
-    ? '<p class="prox-vazio">Nenhuma reunião prevista cadastrada.</p>'
-    : proximas.map((r, idx) => {
+  // Próximas reuniões futuras — coluna direita
+  const proxHtml = !proximasFuturas.length
+    ? '<p class="prox-vazio">Nenhuma reunião futura prevista.</p>'
+    : proximasFuturas.map((r) => {
+        const idx = proximas.indexOf(r);
         const dt  = parseData(r.data);
         const url = gcalUrl(r, c.nome);
         const durStr = r.duracao ? ` · ${r.duracao.replace(':','h')}` : '';
@@ -844,8 +914,8 @@ function renderCalendario(c) {
             <div class="cal-dias" id="cal-dias"></div>
           </div>
           <div class="cal-legenda">
-            <div class="cl-it"><div class="cl-dot" style="background:var(--verde)"></div>Reunião prevista</div>
-            <div class="cl-it"><div class="cl-dot" style="background:var(--azul-medio)"></div>Reunião realizada</div>
+            <div class="cl-it"><div class="cl-dot" style="background:var(--verde)"></div>Prevista</div>
+            <div class="cl-it"><div class="cl-dot" style="background:#ef4444"></div>Já realizada (clique para ver pauta)</div>
             <div class="cl-it"><div class="cl-dot" style="background:var(--azul-fundo);border:1px solid var(--azul-borda)"></div>Hoje</div>
           </div>
         </div>
@@ -866,32 +936,39 @@ function renderCalDias(c) {
   if (tit) tit.innerHTML = `${mesesNomes[calState.mes]} <span style="font-size:13px;opacity:.8">${calState.ano} ▾</span>`;
 
   const hoje = new Date();
+  hoje.setHours(0,0,0,0);
   const diasNoMes = new Date(calState.ano, calState.mes + 1, 0).getDate();
   const iniSem    = new Date(calState.ano, calState.mes, 1).getDay();
 
-  const datasAta = (c.atas || [])
-    .filter(a => a.url && a.data && a.data !== '—' && a.data.includes('-'))
-    .map(a => parseData(a.data));
-
-  const datasPrev = (c.proximas || []).map((r, idx) => ({ ...parseData(r.data), idx }));
+  // Reuniões previstas — separar passadas de futuras
+  const datasPrev = (c.proximas || []).map((r, idx) => {
+    const dt = parseData(r.data);
+    const dataReu = new Date(dt.y, dt.m, dt.d);
+    return { ...dt, idx, passada: dataReu < hoje };
+  });
 
   let html = '';
   for (let i = 0; i < iniSem; i++) html += '<div class="cal-dia"></div>';
   for (let d = 1; d <= diasNoMes; d++) {
     const isH = hoje.getFullYear()===calState.ano && hoje.getMonth()===calState.mes && hoje.getDate()===d;
-    const isA = datasAta.some(dt => dt.y===calState.ano && dt.m===calState.mes && dt.d===d);
     const prevMatch = datasPrev.find(dt => dt.y===calState.ano && dt.m===calState.mes && dt.d===d);
     const isP = !!prevMatch;
 
     let cls = 'cal-dia';
     let dot = '';
     let click = '';
-    if (isH)  cls += ' hoje';
-    if (isA)  { cls += ' realizada'; dot = '<div class="r-dot azul"></div>'; }
-    if (isP)  {
-      cls += ' prevista';
-      dot = '<div class="r-dot verde"></div>';
-      click = `onclick="destacarProx(${prevMatch.idx})"`;
+
+    if (isH) cls += ' hoje';
+    if (isP) {
+      if (prevMatch.passada) {
+        cls += ' passada';
+        dot = '<div class="r-dot passada"></div>';
+        click = `onclick="abrirPauta(${prevMatch.idx})"`;
+      } else {
+        cls += ' prevista';
+        dot = '<div class="r-dot verde"></div>';
+        click = `onclick="destacarProx(${prevMatch.idx})"`;
+      }
     }
     html += `<div class="${cls}" ${click}><span class="dn">${d}</span>${dot}</div>`;
   }
@@ -915,6 +992,44 @@ function mudarMes(dir) {
   if (comAtual) renderCalDias(comAtual);
 }
 
+
+function abrirPauta(idx) {
+  const dados  = (window._delibDados || {});
+  const proximas = comAtual ? (comAtual.proximas || []) : [];
+  const r = proximas[idx];
+  if (!r) return;
+
+  const dt = parseData(r.data);
+  const durStr = r.duracao ? ` · ${r.duracao.replace(':','h')}` : '';
+
+  document.getElementById('modalPautaTitulo').textContent = r.titulo;
+  document.getElementById('modalPautaMeta').textContent =
+    `${dt.d} de ${mesesNomes[dt.m]} de ${dt.y} · ${r.horario}${durStr} · ${r.local}`;
+
+  const corpo = document.getElementById('modalPautaCorpo');
+  if (r.pauta && r.pauta.length) {
+    corpo.innerHTML = `<div class="modal-pauta-lista">${
+      r.pauta.map((p,i) => `
+        <div class="modal-pauta-item">
+          <span class="modal-pauta-n">${i+1}.</span>
+          <span class="modal-pauta-txt">${esc(p)}</span>
+        </div>`).join('')
+    }</div>`;
+  } else {
+    corpo.innerHTML = '<p class="modal-sem-pauta">Nenhuma pauta cadastrada para esta reunião.</p>';
+  }
+
+  document.getElementById('overlayPauta').classList.add('vis');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharPauta() {
+  document.getElementById('overlayPauta').classList.remove('vis');
+  document.body.style.overflow = '';
+}
+function fecharOverlayPauta(e) {
+  if (e.target === document.getElementById('overlayPauta')) fecharPauta();
+}
 function abrirSeletorAno() {
   const el = document.getElementById('cal-seletor-ano');
   if (!el) return;

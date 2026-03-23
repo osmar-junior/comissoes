@@ -549,6 +549,29 @@ const COMISSOES = [
 
     proximas: [
       {
+        titulo: '1ª Reunião CREG 2026 — Planejamento',
+        data: '2026-02-12',
+        horario: '14:00',
+        duracao: '02:15',
+        local: 'TRE-RN — Sala da Vice-Presidência',
+        pauta: [
+          'Aprovação do cronograma de trabalhos 2026',
+          'Constituição do grupo de trabalho para análise dos arts. 42 a 47',
+          'Adequação às Resoluções CNJ 543/2023 e 551/2024 — definição de prazo'
+        ]
+      },
+      {
+        titulo: 'Reunião Extraordinária CREG — Urgência',
+        data: '2026-03-05',
+        horario: '10:00',
+        duracao: '01:30',
+        local: 'TRE-RN — Sala da Vice-Presidência',
+        pauta: [
+          'Análise de proposta emergencial de alteração do art. 15 do RI',
+          'Deliberação sobre prazo para manifestação ao Plenário'
+        ]
+      },
+      {
         titulo: '2ª Reunião CREG 2026',
         data: '2026-05-14',
         horario: '14:00',
