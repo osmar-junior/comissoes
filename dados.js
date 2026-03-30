@@ -1388,12 +1388,6 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2026', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2026',
-        data: 'mar/2026', duracao: null, url: null,
-        pauta: [],
-        delib: []
-      },
-      {
         ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2025',
         data: 'mai/2025', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-cpsi-no012025/@@display-file/file/SEI_03468_2025%2520%25281%2529.pdf',
         pauta: [
@@ -1738,12 +1732,6 @@ const COMISSOES = [
     ],
 
     atas: [
-      {
-        ano: '2026', num: '—', titulo: 'Dados a confirmar',
-        data: '—', duracao: null, url: null,
-        pauta: [],
-        delib: []
-      },
       {
         ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CPAD — 2025',
         data: 'fev/2025', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2025/sei-01241_2025-ata-01/@@display-file/file/SEI%2520-%252001241_2025%2520-%2520Ata%252001.pdf',
@@ -2544,10 +2532,113 @@ const COMISSOES = [
   },
 
   /* ══════════════════════════════════════════════════
-     CEAAD2 — Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 2º Grau
+     CEADD1 — Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 1º Grau
   ══════════════════════════════════════════════════ */
   {
     id: 'ceaad2',
+    sigla: 'CEADD1',
+    nome: 'Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 1º Grau',
+    area: 'Presidência',
+    cor: '#b45309',
+
+    presidencia: { nome: 'Juiz Daniel Cabral Mariz Maia', setor: 'Juiz do Tribunal Pleno' },
+    secretaria: { nome: 'Adriana Karla de Oliveira Ferreira Bezerra', setor: 'Núcleo de Acessibilidade e Inclusão/AGE' },
+    membros_total: 8,
+    periodicidade: 'Sob demanda',
+
+    base_legal: { nome: 'Portaria nº 91/2025/PRES', link: 'https://sei.tre-rn.jus.br/sei/publicacoes/controlador_publicacoes.php?acao=publicacao_visualizar&id_documento=2612599&id_orgao_publicacao=0' },
+
+    genero: { fem: 5, masc: 3 },
+    etnia: null,
+
+    normas_vinculadas: [
+      { orgao: 'CNJ', nome: 'Resolução CNJ nº 351/2020', descricao: 'Política de Prev. e Enfrent. do Assédio Moral, Sexual e da Discriminação', link: 'https://atos.cnj.jus.br/atos/detalhar/3557' },
+      { orgao: 'CNJ', nome: 'Resolução CNJ nº 413/2021', descricao: 'Altera a Res. 351/2020', link: 'https://atos.cnj.jus.br/atos/detalhar/4075' },
+      { orgao: 'CNJ', nome: 'Resolução CNJ nº 450/2022', descricao: 'Institui a Semana de Combate ao Assédio e Discriminação (agenda permanente)', link: 'https://atos.cnj.jus.br/atos/detalhar/4492' },
+      { orgao: 'CNJ', nome: 'Resolução CNJ nº 418/2023', descricao: 'Altera a Res. 351/2020', link: 'https://atos.cnj.jus.br/atos/detalhar/5242' },
+      { orgao: 'CNJ', nome: 'Resolução CNJ nº 538/2023', descricao: 'Altera a Res. 351/2020', link: 'https://atos.cnj.jus.br/atos/detalhar/5386' },
+      { orgao: 'CNJ', nome: 'Resolução CNJ nº 671/2026', descricao: 'Altera a Res. 351/2020', link: 'https://atos.cnj.jus.br/atos/detalhar/6717' }
+    ],
+
+    normas_designacao: [
+      { nome: 'Portaria nº 91/2025/PRES', descricao: 'Composição atual da CEAAD2', link: 'https://sei.tre-rn.jus.br/sei/publicacoes/controlador_publicacoes.php?acao=publicacao_visualizar&id_documento=2612599&id_orgao_publicacao=0', vigente: true },
+      { nome: 'Portaria nº 50/2026/PRES', descricao: 'Altera a composição atual da CEAAD2', link: 'https://www.tre-rn.jus.br/legislacao/atos-normativos/portarias-da-presidencia/portarias/2026/tre-rn-portaria-050-2026-pres/@@display-file/file/Portaria%2520050%25202026%2520PRES.pdf', vigente: true }
+    ],
+
+    composicao: [
+      { unidade: 'Tribunal Pleno', membro: 'Juiz Daniel Cabral Mariz Maia', obs: 'Presidente' },
+      { unidade: 'SINTRAJURN', membro: 'Antonio Klaus Vilas Boas de Souza Silva', obs: 'Membro' },
+      { unidade: 'Núcleo Socioambiental', membro: 'Evelyn Monique de Arruda Farias', obs: 'Membro' },
+      { unidade: 'Gabinete da PRES', membro: 'Maxelli Xavier de Andrade Rebouças', obs: 'Membro' },
+      { unidade: 'Empresa terceirizada', membro: 'Gabriela de Araújo Souza', obs: 'Membro' },
+      { unidade: 'Núcleo de Acessibilidade e Inclusão', membro: 'Adriana Karla de Oliveira Ferreira Bezerra', obs: 'Secretária' },
+      { unidade: 'Seção de Execução Financeira', membro: 'Maximiano Foeppel Uchoa', obs: 'Membro' },
+      { unidade: 'Gabinete da SGP', membro: 'Rejane Medeiros Kfouri', obs: 'Membro' }
+    ],
+
+    atas: [
+      {
+        ano: '2024', num: '—', titulo: 'Não houve reunião no período',
+        data: '—', duracao: null, url: null,
+        pauta: [],
+        delib: []
+      },
+      {
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CEAAD1 — 2025',
+        data: 'fev/2025', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/comissoes-de-enfrentamento-ao-assedio-moral-assedio-sexual-e-discriminacao/atas/tre-rn-ata-1-2025-reuniao-inaugural/@@display-file/file/tre-rn%2520ata%25201-2025%2520-%2520reuniao%2520inaugural.pdf',
+        pauta: [
+        'Plano de ações 2025: capacitação, campanha e pesquisa sobre assédio',
+        'Avaliação de caso concreto de assédio (SIGILOSO)'
+      ],
+        delib: [
+        { txt: 'APROVADO — Plano de ações 2025: capacitação, campanha e pesquisa sobre assédio', status: 'cumprida' }
+      ]
+      },
+      {
+        ano: '2025', num: 'Ata 01a', titulo: 'Avaliação de caso concreto (sigiloso)',
+        data: 'fev/2025', duracao: '01:00:00', url: '—',
+        pauta: [],
+        delib: []
+      },
+      {
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CEAAD2 — 2026',
+        data: 'mar/2026', duracao: '01:25:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/comissoes-de-enfrentamento-ao-assedio-moral-assedio-sexual-e-discriminacao/atas/ata-1-2026/@@display-file/file/SEI_2482141_Ata_de_reuniao_1%2520%25282%2529.pdf',
+        pauta: [
+        'Apresentação do relatório de atividades 2025',
+        'Planejamento das ações 2026'
+      ],
+        delib: [
+        { txt: 'APROVADO — Planejamento da Semana de Combate a Assédio (maio)', status: 'cumprida' }
+      ]
+      }
+    ],
+
+    proximas: [
+      {
+        titulo: '1ª Reunião CEAAD2 — 2025', data: '2025-02-27',
+        horario: '14:30:00', duracao: '01:00:00',
+        local: 'Videoconferência',
+        pauta: [
+        'Plano de ações 2025: capacitação, campanha e pesquisa sobre assédio'
+      ]
+      },
+      {
+        titulo: '1ª Reunião CEAAD2 — 2026', data: '2026-03-25',
+        horario: '10:00:00', duracao: '01:25:00',
+        local: 'Videoconferência',
+        pauta: [
+        'Relatório de atividades 2025',
+        'Planejamento da Semana de Combate ao Assédio e Discriminação (maio)'
+      ]
+      }
+    ]
+  },
+
+  /* ══════════════════════════════════════════════════
+     CEAAD2 — Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 2º Grau
+  ══════════════════════════════════════════════════ */
+  {
+    id: 'ceaad1',
     sigla: 'CEAAD2',
     nome: 'Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 2º Grau',
     area: 'Presidência',
@@ -2600,19 +2691,18 @@ const COMISSOES = [
         'Avaliação de caso concreto de assédio (SIGILOSO)'
       ],
         delib: [
-        { txt: 'APROVADO — Planejamento da Semana de Combate a Assédio (maio)', status: 'cumprida' },
-        { txt: 'APROVADO — Plano de ações 2025 (capacitação, campanha e pesquisa) e reuniões periódicas de acompanhamento das ações', status: 'cumprida' }
+        { txt: 'APROVADO — Plano de ações 2025: capacitação, campanha e pesquisa sobre assédio', status: 'cumprida' }
       ]
       },
       {
         ano: '2025', num: 'Ata 01a', titulo: 'Avaliação de caso concreto (sigiloso)',
-        data: '—', duracao: null, url: null,
+        data: 'fev/2025', duracao: '01:00:00', url: '—',
         pauta: [],
         delib: []
       },
       {
         ano: '2025', num: 'Ata 02', titulo: 'Avaliação de caso concreto (sigiloso)',
-        data: '—', duracao: null, url: null,
+        data: 'jul/2025', duracao: '00:30:00', url: '—',
         pauta: [
         'Acolhimento de denúncia de situação de assédio moral (SIGILOSO)'
       ],
@@ -2620,10 +2710,22 @@ const COMISSOES = [
       },
       {
         ano: '2025', num: 'Ata 03', titulo: 'Avaliação de caso concreto (sigiloso)',
-        data: '—', duracao: null, url: null,
+        data: 'jul/2025', duracao: '02:00:00', url: '—',
         pauta: [
         'Deliberações e encaminhamentos sobre denuncia de assédio (SIGILOSO)'
       ],
+        delib: []
+      },
+      {
+        ano: '2025', num: 'Ata 02', titulo: 'Avaliação de caso concreto (sigiloso)',
+        data: 'out/2025', duracao: '00:45:00', url: '—',
+        pauta: [],
+        delib: []
+      },
+      {
+        ano: '2025', num: 'Ata 03', titulo: 'Avaliação de caso concreto (sigiloso)',
+        data: 'out/2025', duracao: '01:00:00', url: '—',
+        pauta: [],
         delib: []
       },
       {
@@ -2633,125 +2735,59 @@ const COMISSOES = [
         'Apresentação do relatório de atividades 2025',
         'Planejamento das ações 2026'
       ],
-        delib: []
+        delib: [
+        { txt: 'APROVADO — Planejamento da Semana de Combate a Assédio (maio)', status: 'informativa' }
+      ]
       }
     ],
 
     proximas: [
       {
-        titulo: '1ª Reunião CEAAD2 — 2026', data: '2026-03-27',
-        horario: '10:00:00', duracao: '01:25:00',
-        local: 'Videoconferência',
-        pauta: [
-        'Relatório de ativdades 2025',
-        'Planejamento da Semana de Combate ao Assédio e Discriminação (maio)'
-      ]
-      },
-      {
-        titulo: '1ª Reunião CEAAD2 — 2025', data: '2025-02-27',
-        horario: '14:30:00', duracao: '01:00:00',
-        local: 'Videoconferência',
-        pauta: [
-        'Reunião inaugural',
-        'Plano de ações 2025: capacitação, campanha e pesquisa sobre assédio',
-        'Avaliação de caso concreto de assédio (SIGILOSO)'
-      ]
-      },
-      {
-        titulo: '2ª Reunião CEAAD2 — 2025', data: '',
-        horario: '', duracao: null,
+        titulo: '5ª Reunião CEAAD2 — 2025', data: '2025-10-27',
+        horario: '10:00:00', duracao: '01:00:00',
         local: 'Videoconferência',
         pauta: [
         'Acolhimento de denúncia de situação de assédio moral (SIGILOSO)'
       ]
       },
       {
-        titulo: '3ª Reunião CEAAD2 — 2025', data: '2026-03-27',
-        horario: '10:00:00', duracao: '01:25:00',
+        titulo: '4ª Reunião CEAAD1 — 2025', data: '2025-10-22',
+        horario: '11:00:00', duracao: '00:45:00',
         local: 'Videoconferência',
         pauta: [
-        'Deliberações e encaminhamentos sobre denuncia de assédio (SIGILOSO)'
+        'Deliberações sobre denúncia de assédio  (SIGILOSO)'
       ]
-      }
-    ]
-  },
-
-  /* ══════════════════════════════════════════════════
-     CEADD1 — Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 1º Grau
-  ══════════════════════════════════════════════════ */
-  {
-    id: 'ceaad1',
-    sigla: 'CEADD1',
-    nome: 'Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 1º Grau',
-    area: 'Presidência',
-    cor: '#b45309',
-
-    presidencia: { nome: 'Juiz Daniel Cabral Mariz Maia', setor: 'Juiz do Tribunal Pleno' },
-    secretaria: { nome: 'Adriana Karla de Oliveira Ferreira Bezerra', setor: 'Núcleo de Acessibilidade e Inclusão/AGE' },
-    membros_total: 8,
-    periodicidade: 'Sob demanda',
-
-    base_legal: { nome: 'Portaria nº 91/2025/PRES', link: 'https://sei.tre-rn.jus.br/sei/publicacoes/controlador_publicacoes.php?acao=publicacao_visualizar&id_documento=2612599&id_orgao_publicacao=0' },
-
-    genero: { fem: 5, masc: 3 },
-    etnia: null,
-
-    normas_vinculadas: [
-      { orgao: 'CNJ', nome: 'Resolução CNJ nº 351/2020', descricao: 'Política de Prev. e Enfrent. do Assédio Moral, Sexual e da Discriminação', link: 'https://atos.cnj.jus.br/atos/detalhar/3557' },
-      { orgao: 'CNJ', nome: 'Resolução CNJ nº 413/2021', descricao: 'Altera a Res. 351/2020', link: 'https://atos.cnj.jus.br/atos/detalhar/4075' },
-      { orgao: 'CNJ', nome: 'Resolução CNJ nº 450/2022', descricao: 'Institui a Semana de Combate ao Assédio e Discriminação (agenda permanente)', link: 'https://atos.cnj.jus.br/atos/detalhar/4492' },
-      { orgao: 'CNJ', nome: 'Resolução CNJ nº 418/2023', descricao: 'Altera a Res. 351/2020', link: 'https://atos.cnj.jus.br/atos/detalhar/5242' },
-      { orgao: 'CNJ', nome: 'Resolução CNJ nº 538/2023', descricao: 'Altera a Res. 351/2020', link: 'https://atos.cnj.jus.br/atos/detalhar/5386' },
-      { orgao: 'CNJ', nome: 'Resolução CNJ nº 671/2026', descricao: 'Altera a Res. 351/2020', link: 'https://atos.cnj.jus.br/atos/detalhar/6717' }
-    ],
-
-    normas_designacao: [
-      { nome: 'Portaria nº 91/2025/PRES', descricao: 'Composição atual da CEAAD2', link: 'https://sei.tre-rn.jus.br/sei/publicacoes/controlador_publicacoes.php?acao=publicacao_visualizar&id_documento=2612599&id_orgao_publicacao=0', vigente: true },
-      { nome: 'Portaria nº 50/2026/PRES', descricao: 'Altera a composição atual da CEAAD2', link: 'https://www.tre-rn.jus.br/legislacao/atos-normativos/portarias-da-presidencia/portarias/2026/tre-rn-portaria-050-2026-pres/@@display-file/file/Portaria%2520050%25202026%2520PRES.pdf', vigente: true }
-    ],
-
-    composicao: [
-      { unidade: 'Tribunal Pleno', membro: 'Juiz Daniel Cabral Mariz Maia', obs: 'Presidente' },
-      { unidade: 'SINTRAJURN', membro: 'Antonio Klaus Vilas Boas de Souza Silva', obs: 'Membro' },
-      { unidade: 'Núcleo Socioambiental', membro: 'Evelyn Monique de Arruda Farias', obs: 'Membro' },
-      { unidade: 'Gabinete da PRES', membro: 'Maxelli Xavier de Andrade Rebouças', obs: 'Membro' },
-      { unidade: 'Empresa terceirizada', membro: 'Gabriela de Araújo Souza', obs: 'Membro' },
-      { unidade: 'Núcleo de Acessibilidade e Inclusão', membro: 'Adriana Karla de Oliveira Ferreira Bezerra', obs: 'Secretária' },
-      { unidade: '', membro: 'Maximiano Foeppel Uchoa', obs: 'Membro' },
-      { unidade: 'Gabinete da SGP', membro: 'Rejane Medeiros Kfouri', obs: 'Membro' }
-    ],
-
-    atas: [
-      {
-        ano: '2024', num: '—', titulo: 'Não houve reunião no período',
-        data: '—', duracao: null, url: null,
-        pauta: [],
-        delib: []
       },
       {
-        ano: '2025', num: '—', titulo: 'Não houve reunião no período',
-        data: '—', duracao: null, url: null,
-        pauta: [],
-        delib: []
-      },
-      {
-        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CEAAD2 — 2026',
-        data: 'mar/2026', duracao: '01:25:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/comissoes-de-enfrentamento-ao-assedio-moral-assedio-sexual-e-discriminacao/atas/ata-1-2026/@@display-file/file/SEI_2482141_Ata_de_reuniao_1%2520%25282%2529.pdf',
+        titulo: '3ª Reunião CEAAD1 — 2025', data: '2025-07-25',
+        horario: '13:00:00', duracao: '02:00:00',
+        local: 'Videoconferência',
         pauta: [
-        'Apresentação do relatório de atividades 2025',
-        'Planejamento das ações 2026'
-      ],
-        delib: []
-      }
-    ],
-
-    proximas: [
+        'Acolhimento de denúncia de situação de assédio moral (SIGILOSO)'
+      ]
+      },
       {
-        titulo: '1ª Reunião CEAAD1 — 2026', data: '2025-02-27',
+        titulo: '2ª Reunião CEAAD1 — 2025', data: '2025-07-23',
+        horario: '13:30:00', duracao: '00:30:00',
+        local: 'Videoconferência',
+        pauta: [
+        'Deliberações sobre denúncia de assédio  (SIGILOSO)'
+      ]
+      },
+      {
+        titulo: '1ª Reunião CEAAD1 — 2025', data: '2025-02-27',
         horario: '14:30:00', duracao: '01:00:00',
         local: 'Videoconferência',
         pauta: [
-        'Relatório de ativdades 2025',
+        'Plano de ações 2025: capacitação, campanha e pesquisa sobre assédio'
+      ]
+      },
+      {
+        titulo: '1ª Reunião CEAAD1 — 2026', data: '2026-03-25',
+        horario: '10:00:00', duracao: '01:25:00',
+        local: 'Videoconferência',
+        pauta: [
+        'Relatório de atividades 2025',
         'Planejamento da Semana de Combate ao Assédio e Discriminação (maio)'
       ]
       }
@@ -3051,7 +3087,8 @@ const COMISSOES = [
         'Avaliação do evento Roda de Mulheres'
       ],
         delib: [
-        { txt: 'Prestação de contas e registros do evento Roda das Mulheres', status: 'informativa' }
+        { txt: 'Prestação de contas e registros do evento Roda das Mulheres', status: 'informativa' },
+        { txt: 'Prestação de contas e registros do evento Roda das Mulheres', status: 'cumprida' }
       ]
       }
     ],
@@ -3298,20 +3335,44 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2025', num: 'Ata 01', titulo: '',
-        data: '—', duracao: null, url: null,
+        ano: '2025', num: 'Ata 02', titulo: '1ª Reunião CEERD — 2025',
+        data: 'abr/2025', duracao: '01:15:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/atas-da-comissao-de-equidade-racial-e-diversidade/ata-no-2-2025/@@display-file/file/Comiss%25C3%25A3o%2520Equidade_Ata_de_reuniao_2-2025.pdf',
         pauta: [],
-        delib: []
+        delib: [
+        { txt: 'APROVADO — Planejamento do evento 2º Ubuntu (novembro)', status: 'cumprida' }
+      ]
       },
       {
-        ano: '2024', num: 'Ata 01', titulo: '',
-        data: '—', duracao: null, url: null,
-        pauta: [],
-        delib: []
+        ano: '2024', num: 'Ata 01', titulo: '1ª Reunião CEERD — 2024',
+        data: 'out/2024', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/atas-da-comissao-de-equidade-racial-e-diversidade/ata-01_comissao-de-equidade-2024/@@display-file/file/Ata%2520-%2520CQUIDIV.pdf',
+        pauta: [
+        'Evento em alusão ao Dia da Consciência Negra'
+      ],
+        delib: [
+        { txt: 'APROVADO — Parceria entre a comissão e a CPFEM para ações com temas comuns', status: 'cumprida' }
+      ]
       }
     ],
 
-    proximas: []
+    proximas: [
+      {
+        titulo: '1ª Reunião CEERD — 2024', data: '2024-10-11',
+        horario: '16:00:00', duracao: '01:00:00',
+        local: 'TRE-RN — Sala da AGE',
+        pauta: [
+        'Planejamento Dia da Consciência Negra'
+      ]
+      },
+      {
+        titulo: '2ª Reunião CPFEM — 2025', data: '2025-04-10',
+        horario: '16:00:00', duracao: '01:00:00',
+        local: 'Videoconferência',
+        pauta: [
+        'Palestrante do curso de letramento racial',
+        'Planejamento do evento 2ºUbuntu (novembro)'
+      ]
+      }
+    ]
   },
 
 ];
