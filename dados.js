@@ -214,7 +214,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: 'Ata 04', titulo: '4ª Reunião CGPLS — 2024',
+        ano: '2024', num: 'Ata 04', titulo: '4ª Reunião CGPLS — 2024',
         data: 'set/2024', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/atas/tre-rn-ata-da-4a-cgpls-2024/@@display-file/file/Ata%2520n%25C2%25BA%25204_%2520CGPLS.pdf',
         pauta: [
         'Análise do PLS do TRE-RN: indicadores críticos',
@@ -228,7 +228,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: 'Ata 03', titulo: '3ª Reunião CGPLS — 2024',
+        ano: '2024', num: 'Ata 03', titulo: '3ª Reunião CGPLS — 2024',
         data: 'jun/2024', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/atas/tre-rn-ata-da-3a-cgpls-2024/@@display-file/file/Ata%2520n%25C2%25BA%25203_CGPLS.pdf',
         pauta: [
         'Análise do Balanço da Sustentabilidade 2023 e IDS (foco PLS 2024)',
@@ -242,7 +242,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: 'Ata 02', titulo: '2ª Reunião CGPLS — 2024',
+        ano: '2024', num: 'Ata 02', titulo: '2ª Reunião CGPLS — 2024',
         data: 'mar/2024', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/atas/ata-cgpls-02-2024/@@display-file/file/2%25C2%25AA%2520Ata%2520da%2520CGPLS%2520-%252012.03.2024.pdf',
         pauta: [
         'Avaliação e aprovação das ações do PLS 2024'
@@ -252,7 +252,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2024',
+        ano: '2024', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2024',
         data: 'fev/2024', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/arquivo/ata-cgpls-01-2024/@@display-file/file/1%25C2%25AA%2520Ata%2520da%2520CGPLS%2520-%252021.02.2024.pdf',
         pauta: [
         'Proposição de metas do PLS 2024 e 2025 e deliberações'
@@ -262,7 +262,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 04', titulo: '4ª Reunião CGPLS — 2023',
+        ano: '2023', num: 'Ata 04', titulo: '4ª Reunião CGPLS — 2023',
         data: 'nov/2023', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/atas/ata-cgpls-04-2023/@@display-file/file/ataFinalizadaReuniao-CGPL-4-2023.pdf',
         pauta: [
         'Deliberações sobre para garrafas descartáveis, garrafões, ação solidária e estagiários (impacto no FTT)'
@@ -274,7 +274,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 03', titulo: '3ª Reunião CGPLS — 2023',
+        ano: '2023', num: 'Ata 03', titulo: '3ª Reunião CGPLS — 2023',
         data: 'mai/2023', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/arquivo/ata-cgpls-03-2023/@@display-file/file/3%25C2%25AA%2520Reuni%25C3%25A3o%2520da%2520CGPLS.pdf',
         pauta: [
         'Apresentação dos resultados parciais (jan. a abr.)',
@@ -291,7 +291,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 02', titulo: '2ª Reunião CGPLS — 2023',
+        ano: '2023', num: 'Ata 02', titulo: '2ª Reunião CGPLS — 2023',
         data: 'abr/2023', duracao: '01:40:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/arquivo/ata-cgpls-02-2023/@@display-file/file/ataFinalizadaReuniao-CGPL-2-2023%25282%2529.pdf',
         pauta: [
         'Aprovação das metas do PLS 2023',
@@ -305,7 +305,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2023',
+        ano: '2023', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2023',
         data: 'mar/2023', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/arquivo/ata-cgpls-01-2023/@@display-file/file/ataFinalizadaReuniao-CGPL-1-2023%25284%2529.pdf',
         pauta: [
         'Apresentação do Relatório de Desempenho 2022 para validação da CGPLS',
@@ -318,7 +318,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2022.0', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2022',
+        ano: '2022', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2022',
         data: 'abr/2022', duracao: '00:20:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/arquivo/ata-1-2022-nova/@@display-file/file/Ata%25201%25C2%25BA%2520Reuni%25C3%25A3o%2520da%2520Comiss%25C3%25A3o%2520Gestora%2520do%2520PLS.pdf',
         pauta: [
         'Apresentação dos indicadores do PLS'
@@ -332,7 +332,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 04', titulo: '4ª Reunião CGPLS — 2021',
+        ano: '2021', num: 'Ata 04', titulo: '4ª Reunião CGPLS — 2021',
         data: 'out/2021', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/atas/ata-cgpls-11out2021/@@display-file/file/ataFinalizadaReuniao-NGS-1-2021%2520%25281%2529.pdf',
         pauta: [
         'Acompanhamento das metas 2021',
@@ -345,7 +345,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 03', titulo: '3ª Reunião CGPLS — 2021',
+        ano: '2021', num: 'Ata 03', titulo: '3ª Reunião CGPLS — 2021',
         data: 'ago/2021', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/plano-de-logistica-sustentavel/arquivos/tre-rn-ata-cgpls-03-2021/@@display-file/file/Reuni%25C3%25A3o%2520da%2520CGPLS%2520-%25203%25C2%25AA%2520Ata%2520-%252010.08.2021_Final.pdf',
         pauta: [
         'Apresentação do Balanço da Sustentabilidade (ano 2020)',
@@ -363,7 +363,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 02', titulo: '2ª Reunião CGPLS — 2021',
+        ano: '2021', num: 'Ata 02', titulo: '2ª Reunião CGPLS — 2021',
         data: 'mai/2021', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/plano-de-logistica-sustentavel/arquivos/tre-rn-ata-cgpls-02-2021/@@display-file/file/1%2520-%2520Reuni%25C3%25A3o%2520da%2520CGPLS%2520-%25202%25C2%25AA%2520Ata%2520-%252018.05.2021-com%2520todas%2520as%2520assinaturas.pdf',
         pauta: [
         'Apresentação e aprovação do Plano de Logística Sustentável 2021-2022'
@@ -374,7 +374,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2021',
+        ano: '2021', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2021',
         data: 'abr/2021', duracao: '03:00:00', url: 'https://www.tre-rn.jus.br/institucional/planejamento-e-gestao-estrategica/arquivos/nucleo-socio-ambiental/documentos/tre-rn-ata-no-01-2021-cgpls/@@display-file/file/1%2520-%2520Reuni%25C3%25A3o%2520da%2520CGPLS%2520-%25201%25C2%25AA%2520Ata%2520-%252005.04.2021-2%2520Recebido%2520DG.pdf',
         pauta: [
         'Apresentação dos resultados 2020',
@@ -390,13 +390,13 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2020', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2019.0', num: 'Ata 06', titulo: '6ª Reunião CGPLS — 2019',
+        ano: '2019', num: 'Ata 06', titulo: '6ª Reunião CGPLS — 2019',
         data: 'ago/2019', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/atas/ata-no-06-2019-ngs/@@display-file/file/Ata%2520n%25C2%25BA%252006-2019%2520-%2520NGS.pdf',
         pauta: [
         'Reunião NSA e SCP: Gestão eficiente de resíduos sólidos na Sede, Fórum da capital e COJE'
@@ -409,7 +409,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 05', titulo: '5ª Reunião CGPLS — 2019',
+        ano: '2019', num: 'Ata 05', titulo: '5ª Reunião CGPLS — 2019',
         data: 'ago/2019', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/plano-de-logistica-sustentavel/arquivos/atas/ata-no-5-ngs/@@display-file/file/Ata%2520n%25C2%25BA%25205%2520ngs.pdf',
         pauta: [
         'Reunião NSA e SCP: Implementação da nova política de uso de copos descartáveis (Port. 216/2019-DG)'
@@ -421,7 +421,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 04', titulo: '4ª Reunião CGPLS — 2019',
+        ano: '2019', num: 'Ata 04', titulo: '4ª Reunião CGPLS — 2019',
         data: 'nov/2019', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/atas/ata-no-04-2019-cgpls/@@display-file/file/ATA%2520DE%2520REUNI%25C3%2583O%2520N%25C2%25BA%252004-2019%2520-%2520PLS.pdf',
         pauta: [
         'Retomada dos temas abordados na reunião anterior (indicadores jan a out/2019)'
@@ -436,7 +436,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 03', titulo: '3ª Reunião CGPLS — 2019',
+        ano: '2019', num: 'Ata 03', titulo: '3ª Reunião CGPLS — 2019',
         data: 'out/2019', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/atas/ata-de-reuniao-03-2019-pls/@@display-file/file/ATA%2520DE%2520REUNI%25C3%2583O%252003-2019%2520-%2520PLS.pdf',
         pauta: [
         'Retomada dos temas abordados na reunião anterior (indicadores)'
@@ -448,7 +448,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 02', titulo: '2ª Reunião CGPLS — 2019',
+        ano: '2019', num: 'Ata 02', titulo: '2ª Reunião CGPLS — 2019',
         data: 'jun/2019', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/plano-de-logistica-sustentavel/arquivos/atas/ata-no-02-2019-pls-11-06-2019-pdf/@@display-file/file/ATA%2520DE%2520REUNI%25C3%2583O%2520N%25C2%25BA%252002-2019%2520-PLS.pdf',
         pauta: [
         'Discussão das pendências da ata anterior'
@@ -459,7 +459,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2019',
+        ano: '2019', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2019',
         data: 'mai/2019', duracao: '01:20:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/plano-de-logistica-sustentavel/arquivos/atas/1a-ata-reuniao-comissao-gestora-do-pls/@@display-file/file/1%25C2%25BA%2520Ata%2520-%2520Reuni%25C3%25A3o%2520Comit%25C3%25AA%2520Gestor%2520do%2520PLS.pdf',
         pauta: [
         'Apresentação do novo PLS 2019-2020'
@@ -778,7 +778,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2023',
+        ano: '2023', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2023',
         data: 'mar/2023', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/acessibilidade/copy_of_acessibilidade-e-inclusao/atas-da-cacess-2023/ata-cacess-2023-n-1/@@display-file/file/Ata%2520reuni%25C3%25A3o%2520CACESS%252001.23.pdf',
         pauta: [
         'Plano de comunicação da CACESS: eventos e ações',
@@ -800,7 +800,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2021',
+        ano: '2021', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2021',
         data: 'jan/2021', duracao: '00:40:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/acessibilidade/copy_of_acessibilidade-e-inclusao/tre-rn-atas-reunioes-nai-cacess-2021/tre-rn-ata-nai-cacess-01-2021/@@display-file/file/Ata%2520de%2520reuni%25C3%25A3o%252001-2021%2520-%2520Comiss%25C3%25A3o%2520de%2520Acessibilidade%2520-%2520assinado%2520todos.pdf',
         pauta: [
         'Projeto Vamos Falar de Nós',
@@ -816,7 +816,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 02', titulo: '2ª Reunião CACESS — 2021',
+        ano: '2021', num: 'Ata 02', titulo: '2ª Reunião CACESS — 2021',
         data: 'abr/2021', duracao: '01:20:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/acessibilidade/copy_of_acessibilidade-e-inclusao/tre-rn-atas-reunioes-nai-cacess-2021/tre-rn-ata-02-nai-cacess/@@display-file/file/Ata%2520de%2520reuni%25C3%25A3o%252002-2021%2520-%2520Comiss%25C3%25A3o%2520de%2520Acessibilidade-%2520NAI%2520-%2520assinado%2520juliana%2520-%2520Ata%2520de%2520reuni%25C3%25A3o%252002-2021%2520-%2520Comiss%25C3%25A3o%2520de%2520Acessibilidade-%2520TODO%2520MUNDO.pdf',
         pauta: [
         'Elaboração do Plano de Ação 2021'
@@ -826,7 +826,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 03', titulo: '3ª Reunião CACESS — 2021',
+        ano: '2021', num: 'Ata 03', titulo: '3ª Reunião CACESS — 2021',
         data: 'jul/2021', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/acessibilidade/copy_of_acessibilidade-e-inclusao/tre-rn-atas-reunioes-nai-cacess-2021/ata3-reuniao-cacess-2021/@@display-file/file/Ata%2520de%2520reuni%25C3%25A3o%252003-2021%2520-%2520Comiss%25C3%25A3o%2520de%2520Acessibilidade-%2520NAI.pdf',
         pauta: [
         'Discussão sobre viabilidade de aquisição de impressora em braille'
@@ -836,7 +836,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 04', titulo: '4ª Reunião CACESS — 2021',
+        ano: '2021', num: 'Ata 04', titulo: '4ª Reunião CACESS — 2021',
         data: 'jul/2021', duracao: '00:40:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/acessibilidade/copy_of_acessibilidade-e-inclusao/tre-rn-atas-reunioes-nai-cacess-2021/ata4-reuniao-cacess-2021/@@display-file/file/Ata%2520de%2520reuni%25C3%25A3o%252004-2021%2520-%2520Comiss%25C3%25A3o%2520de%2520Acessibilidade-%2520NAI%2520-%2520Ata%2520de%2520reuni%25C3%25A3o%252004-2021%2520-%2520Comiss%25C3%25A3o%2520de%2520Acessibilidade-%2520NAI%2520%2528assinada%2529.pdf',
         pauta: [
         'Apresentação dos integrantes ao novo presidente da CACESS',
@@ -851,7 +851,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2020',
+        ano: '2020', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2020',
         data: 'jun/2020', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/acessibilidade/copy_of_acessibilidade-e-inclusao/tre-rn-atas-reunioes-nai-cacess-2020/tre-rn-ata-01-reuniao-conjunta-cacess-e-nai/@@display-file/file/TRE-RN%2520Ata%2520de%2520reuni%25C3%25A3o%252001-2020%2520-%2520Comiss%25C3%25A3o%2520de%2520Acessibilidade-%2520NAI.pdf',
         pauta: [
         'Norma interna de acessibilidade',
@@ -866,7 +866,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: 'Ata 02', titulo: '2ª Reunião CACESS — 2020',
+        ano: '2020', num: 'Ata 02', titulo: '2ª Reunião CACESS — 2020',
         data: 'jun/2020', duracao: '01:20:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/acessibilidade/copy_of_acessibilidade-e-inclusao/tre-rn-atas-reunioes-nai-cacess-2020/tre-rn-ata-02-reuniao-cacess-e-nai/@@display-file/file/TRE-RN%2520Ata%2520de%2520reuni%25C3%25A3o%252002-2020%2520-%2520Comiss%25C3%25A3o%2520de%2520Acessibilidade-%2520NAI.pdf',
         pauta: [
         'Acompanhamento das pendências de reuniões anteriores'
@@ -876,7 +876,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2019',
+        ano: '2019', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2019',
         data: 'fev/2019', duracao: '00:30:00', url: 'https://www.tre-rn.jus.br/institucional/planejamento-e-gestao-estrategica/arquivos/nucleo-de-acessibilidade/ata-no-1-comissao-acessibilidade-20-02-2019/@@display-file/file/Ata%2520n%25C2%25BA%25201%2520-%2520comissao-acessibilidade-%252020.02.2019.pdf',
         pauta: [
         'Aquisição de software e impressora Braille',
@@ -888,7 +888,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 01', titulo: '2ª Reunião CACESS — 2019',
+        ano: '2019', num: 'Ata 01', titulo: '2ª Reunião CACESS — 2019',
         data: 'jun/2019', duracao: '01:04:00', url: 'https://www.tre-rn.jus.br/institucional/planejamento-e-gestao-estrategica/arquivos/nucleo-de-acessibilidade/ata-2-2019-cacess-tre-rn/@@display-file/file/Ata%2520de%2520reuni%25C3%25A3o02-2019%2520-%2520CACESS.pdf',
         pauta: [
         'Minuta de norma de criação do Núcleo de Acessibilidade e Inclusão',
@@ -902,7 +902,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2018.0', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2018',
+        ano: '2018', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2018',
         data: 'mar/2018', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/institucional/planejamento-e-gestao-estrategica/arquivos/nucleo-de-acessibilidade/reuniao-01-2018/@@display-file/file/Reuni%25C3%25A3o%252001-2018.pdf',
         pauta: [
         'Suplentes da comissão',
@@ -917,7 +917,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2018.0', num: 'Ata 02', titulo: '2ª Reunião CACESS — 2018',
+        ano: '2018', num: 'Ata 02', titulo: '2ª Reunião CACESS — 2018',
         data: 'abr/2018', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/institucional/planejamento-e-gestao-estrategica/arquivos/nucleo-de-acessibilidade/reuniao-02-2018/@@display-file/file/Reuni%25C3%25A3o%252002-2018.pdf',
         pauta: [
         'Produção de material institucional para sensibilização sobre deficiências'
@@ -927,7 +927,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2018.0', num: 'Ata 03', titulo: '3ª Reunião CACESS — 2018',
+        ano: '2018', num: 'Ata 03', titulo: '3ª Reunião CACESS — 2018',
         data: 'abr/2018', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/institucional/planejamento-e-gestao-estrategica/arquivos/nucleo-de-acessibilidade/reuniao-03-2018/@@display-file/file/Reuni%25C3%25A3o%252003-2018.pdf',
         pauta: [
         'Spot para eleitor com deficiência',
@@ -938,7 +938,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2018.0', num: 'Ata 04', titulo: '4ª Reunião CACESS — 2018',
+        ano: '2018', num: 'Ata 04', titulo: '4ª Reunião CACESS — 2018',
         data: 'mai/2018', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/institucional/planejamento-e-gestao-estrategica/arquivos/nucleo-de-acessibilidade/reuniao-04-2018/@@display-file/file/Reuni%25C3%25A3o%252004-2018.pdf',
         pauta: [
         'Recursos de acessibilidade (fones e urnas para capacitação)',
@@ -1149,7 +1149,7 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2026.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2026', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -1171,49 +1171,49 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2023.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2023', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2022.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2022', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2021.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2021', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2020.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2020', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2019.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2019', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2018.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2018', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2017.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2017', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2016.0', num: 'Ata 01', titulo: '1ª Reunião CREG — 2025',
+        ano: '2016', num: 'Ata 01', titulo: '1ª Reunião CREG — 2025',
         data: 'nov/2016', duracao: '01:45:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/atas-da-comissao-de-regimento/ata_1-2016-comissao-de-regimento/@@display-file/file/Ata%2520Reuniao%2520Comite%2520Regimento%2520-%25208-11-2016.pdf',
         pauta: [
         'Alteração do RITRERN para adequação à Res.TSE nº 23.493/2026 (mandatos e recondução)'
@@ -1289,7 +1289,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CJE — 2025',
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CJE — 2025',
         data: 'fev/2025', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/atas-da-comissao-de-jurisprudencia/ata-01_2025/@@display-file/file/Ata%252001_2025_Comiss%25C3%25A3o%2520de%2520Jurisprud%25C3%25AAncia.pdf',
         pauta: [
         'Apresentação do planejamento da CGI para a área de jurisprudência'
@@ -1305,19 +1305,19 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2024', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2023.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2023', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2022.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2022', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -1394,7 +1394,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2025',
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2025',
         data: 'mai/2025', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-cpsi-no012025/@@display-file/file/SEI_03468_2025%2520%25281%2529.pdf',
         pauta: [
         'Capacitações 2024',
@@ -1409,7 +1409,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 02', titulo: '2ª Reunião CPSI — 2025',
+        ano: '2025', num: 'Ata 02', titulo: '2ª Reunião CPSI — 2025',
         data: 'ago/2025', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-cpsi-no022025/@@display-file/file/SEI_2374109_Ata_de_reuniao_2.pdf',
         pauta: [
         'Planejamento Dia da Segurança 2025',
@@ -1423,7 +1423,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 03', titulo: '3ª Reunião CPSI — 2025',
+        ano: '2025', num: 'Ata 03', titulo: '3ª Reunião CPSI — 2025',
         data: 'set/2025', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-cpsi-ata03-2025/@@display-file/file/SEI_2391249_Ata_de_reuniao_3.pdf',
         pauta: [
         'Revisão de norma de gestão de incidentes',
@@ -1437,7 +1437,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: 'Ata 02', titulo: '1ª Reunião CPSI — 2024',
+        ano: '2024', num: 'Ata 02', titulo: '1ª Reunião CPSI — 2024',
         data: 'mai/2024', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-cpsi_02_2024/@@display-file/file/SEI_0041405_Ata_de_reuniao_2.pdf',
         pauta: [
         'Plano de trabalho anual',
@@ -1450,7 +1450,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2023',
+        ano: '2023', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2023',
         data: 'jun/2023', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-cpsi-01-2023-06-23-2023/@@display-file/file/ataFinalizadaReuniao-CPSI-1-2023%2520%25281%2529.pdf',
         pauta: [
         'Política de segurança (análise)',
@@ -1464,7 +1464,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 02', titulo: '2ª Reunião CPSI — 2023',
+        ano: '2023', num: 'Ata 02', titulo: '2ª Reunião CPSI — 2023',
         data: 'ago/2023', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-cpsi-02-2023-16-08-2023/@@display-file/file/ataFinalizadaReuniao-CPSI-2-2023%2520%25281%2529%2520%25281%2529.pdf',
         pauta: [
         'Evento de cibersegurança (organização)',
@@ -1477,7 +1477,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2022.0', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2022',
+        ano: '2022', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2022',
         data: 'mai/2022', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-reuniao-cpsi-n01-2022-09-05-2022/@@display-file/file/ataFinalizadaReuniao-CPSI-1-2022.pdf',
         pauta: [
         'Novos integrantes CPSI e Plano de ação anual',
@@ -1489,13 +1489,13 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2021', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2020.0', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2021',
+        ano: '2020', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2021',
         data: 'mai/2021', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-01-2021-cpsi-11-05-2021/@@display-file/file/Ata%252001%25202021%2520-%2520CPSI%2520-%252011.05.2021%2520Assinada.pdf',
         pauta: [
         'Planos de trabalho 2020/2021',
@@ -1510,7 +1510,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: 'Ata 02', titulo: '2ª Reunião CPSI — 2021',
+        ano: '2020', num: 'Ata 02', titulo: '2ª Reunião CPSI — 2021',
         data: 'set/2021', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-02-2021-cpsi-09-09-2021/@@display-file/file/Ata%2520002-2020%2520-%25202%25C2%25AA%2520Reuni%25C3%25A3o%2520CPSI%2520-%252009.09.2020%2520com%2520anexos_Falta%2520Renato%2520%25281%2529.pdf',
         pauta: [
         'Processos de segurança da informação (análise/revisão)',
@@ -1529,7 +1529,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2019',
+        ano: '2019', num: 'Ata 01', titulo: '1ª Reunião CPSI — 2019',
         data: 'ago/2019', duracao: '01:20:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/ata-001-2019-1a-reuniao-cpsi-09-08-2019/@@display-file/file/Ata%2520001-2019%2520-%25201%25C2%25AA%2520Reuni%25C3%25A3o%2520CPSI-09.08.2019.pdf',
         pauta: [
         'Política de Segurança da Informação (minuta da norma e ajustes) e fluxo doprocesso de elaboração',
@@ -1542,7 +1542,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 02', titulo: '2ª Reunião CPSI — 2019',
+        ano: '2019', num: 'Ata 02', titulo: '2ª Reunião CPSI — 2019',
         data: 'ago/2019', duracao: '00:53:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-002-2019-2a-reuniao-cpsi-30-08-2019/@@display-file/file/Ata%2520002-2019-%25202%25C2%25AA%2520Reuni%25C3%25A3o%2520CPSI-30.08.2019.pdf',
         pauta: [
         'Fluxos de incidentes de segurança da informação e classificação da informação.'
@@ -1552,7 +1552,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 03', titulo: '3ª Reunião CPSI — 2019',
+        ano: '2019', num: 'Ata 03', titulo: '3ª Reunião CPSI — 2019',
         data: 'nov/2019', duracao: '00:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-e-gestao-de-tic/sistema-de-gestao-da-seguranca-da-informacao/atas-cpsi/tre-rn-ata-n-03-2019-cpsi/@@display-file/file/Ata%2520n%25C2%25BA%252003-2019%2520-%2520CPSI%2520-%252025.11.2019.pdf',
         pauta: [
         'Plano de Ação da CPSI'
@@ -1745,7 +1745,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CPAD — 2025',
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CPAD — 2025',
         data: 'fev/2025', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2025/sei-01241_2025-ata-01/@@display-file/file/SEI%2520-%252001241_2025%2520-%2520Ata%252001.pdf',
         pauta: [
         'Análise de editais e listagens de eliminação documental (ZEs)',
@@ -1762,7 +1762,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 02', titulo: '2ª Reunião CPAD — 2025',
+        ano: '2025', num: 'Ata 02', titulo: '2ª Reunião CPAD — 2025',
         data: 'fev/2025', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2025/sei-01241_2025-ata-02/@@display-file/file/SEI%2520-%252001241_2025%2520-%2520Ata%252002.pdf',
         pauta: [
         'Cronograma de atividades junto às unidades',
@@ -1776,7 +1776,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 03', titulo: '3ª Reunião CPAD — 2025',
+        ano: '2025', num: 'Ata 03', titulo: '3ª Reunião CPAD — 2025',
         data: 'mar/2025', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2025/sei-01241_2025-ata-03/@@display-file/file/SEI%2520-%252001241_2025%2520-%2520Ata%252003.pdf',
         pauta: [
         'Roteiro de descarte (ZEs)',
@@ -1790,7 +1790,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 04', titulo: '4ª Reunião CPAD — 2025',
+        ano: '2025', num: 'Ata 04', titulo: '4ª Reunião CPAD — 2025',
         data: 'mar/2025', duracao: '02:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2025/sei-01241_2025-ata-04/@@display-file/file/SEI%2520-%252001241_2025%2520-%2520Ata%252004.pdf',
         pauta: [
         'Validação de texto (IA)',
@@ -1806,7 +1806,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 05', titulo: '5ª Reunião CPAD — 2025',
+        ano: '2025', num: 'Ata 05', titulo: '5ª Reunião CPAD — 2025',
         data: 'mai/2025', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2025/sei-01241_2025-ata-05/@@display-file/file/SEI%2520-%252001241_2025%2520-%2520Ata%252005.pdf',
         pauta: [
         'Análise de editais e listagens de eliminação documental (ZEs)',
@@ -1820,7 +1820,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 06', titulo: '6ª Reunião CPAD — 2025',
+        ano: '2025', num: 'Ata 06', titulo: '6ª Reunião CPAD — 2025',
         data: 'mai/2025', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2025/sei-01241_2025-ata-06/@@display-file/file/SEI%2520-%252001241_2025%2520-%2520Ata%252006.pdf',
         pauta: [
         'Reanálise de edital e listagem (45ª ZE)',
@@ -1834,7 +1834,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 07', titulo: '7ª Reunião CPAD — 2025',
+        ano: '2025', num: 'Ata 07', titulo: '7ª Reunião CPAD — 2025',
         data: 'set/2025', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2025/sei-01241_2025-ata-07/@@display-file/file/SEI%2520-%252001241_2025%2520-%2520Ata%252007.pdf',
         pauta: [
         'Análise de editais e listagens de eliminação documental (ZEs)',
@@ -1850,7 +1850,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: 'Ata 01', titulo: '1ª Reunião CPAD — 2024',
+        ano: '2024', num: 'Ata 01', titulo: '1ª Reunião CPAD — 2024',
         data: 'abr/2024', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2024/sei_0025687_ata_de_reuniao_01_2024/@@display-file/file/SEI_0025687_Ata_de_reuniao_01_2024.pdf',
         pauta: [
         'Análise de edital e listagem de eliminação documental (54ª ZE)',
@@ -1865,7 +1865,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: 'Ata 02', titulo: '2ª Reunião CPAD — 2024',
+        ano: '2024', num: 'Ata 02', titulo: '2ª Reunião CPAD — 2024',
         data: 'jun/2024', duracao: '00:08:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/gestao/gestao-documental/atas/2024/tre-rn-cpad_ata-de-reuniao-02_2024/@@display-file/file/TRE-RN%2520CPAD_Ata%2520de%2520reuni%25C3%25A3o%252002_2024%2520-%2520SEI_0054953.pdf',
         pauta: [
         'Análise de editais e listagens de eliminação documental (ZEs)',
@@ -2017,7 +2017,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2026.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2026', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -2065,19 +2065,19 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2021.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2021', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2022.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2022', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2023.0', num: 'Ata 01', titulo: '1ª Reunião CPGM — 2023',
+        ano: '2023', num: 'Ata 01', titulo: '1ª Reunião CPGM — 2023',
         data: 'jul/2023', duracao: '01:13:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-da-gestao-da-memoria/arquivos_atas-da-cpm/ata-1-2023-cpgm-ass/@@display-file/file/ATA%25201.pdf',
         pauta: [
         'Evento de lançamento do Programa Selo Acervo Histórico: acervos, ações e comunicação',
@@ -2086,7 +2086,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2023.0', num: 'Ata 02', titulo: '2ª Reunião CPGM — 2023',
+        ano: '2023', num: 'Ata 02', titulo: '2ª Reunião CPGM — 2023',
         data: 'ago/2023', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-da-gestao-da-memoria/arquivos_atas-da-cpm/ata-2-202-cpgm-ass/@@display-file/file/ATA%25202.pdf',
         pauta: [
         'Organização do evento do Programa Selo Acervo Histórico',
@@ -2095,7 +2095,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2023.0', num: 'Ata 03', titulo: '3ª Reunião CPGM — 2023',
+        ano: '2023', num: 'Ata 03', titulo: '3ª Reunião CPGM — 2023',
         data: 'set/2023', duracao: '01:45:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-da-gestao-da-memoria/arquivos_atas-da-cpm/ata-3-2023-cpgm-ass/@@display-file/file/ATA%25203.pdf',
         pauta: [
         'Organização do evento do Programa Selo Acervo Histórico',
@@ -2104,13 +2104,13 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2024.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2024', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CPGM — 2025',
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CPGM — 2025',
         data: 'set/2025', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-da-gestao-da-memoria/arquivos_atas-da-cpm/ata-1_2025/@@display-file/file/Ata%252001_2025_comiss%25C3%25A3o%2520mem%25C3%25B3ria.pdf',
         pauta: [
         'Ajustes do SEI para o Programa Selo acervo Histórico',
@@ -2119,7 +2119,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 02', titulo: '2ª Reunião CPGM — 2025',
+        ano: '2025', num: 'Ata 02', titulo: '2ª Reunião CPGM — 2025',
         data: 'set/2025', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-da-gestao-da-memoria/arquivos_atas-da-cpm/ata-2_2025_memoria/@@display-file/file/ATA%252002_2025%2520CPGM.pdf',
         pauta: [
         'Apresentação da Reserva Técnica do NCEM',
@@ -2224,7 +2224,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CEDEM — 2025',
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CEDEM — 2025',
         data: 'fev/2025', duracao: '00:45:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2025/ata-1_2025-cedm/@@display-file/file/Ata_de_Reuniao_01-2025-CEDM_-_SEI_9288-23_assinado.pdf',
         pauta: [
         'Desfazimento de veículos: distribuição de bens e cronograma de entrega aos beneficiários'
@@ -2234,7 +2234,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 02', titulo: '2ª Reunião CEDEM — 2025',
+        ano: '2025', num: 'Ata 02', titulo: '2ª Reunião CEDEM — 2025',
         data: 'abr/2025', duracao: '00:45:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2025/ata-2_cedm/@@display-file/file/Ata_de_Reuniao_02-2025-CEDM_-_SEI_10948-24_assinado_assinado-1.pdf',
         pauta: [
         'Desfazimento de veículos: distribuição de bens e cronograma de entrega aos beneficiários'
@@ -2244,7 +2244,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: 'Ata 01', titulo: '1ª Reunião CEDEM — 2024',
+        ano: '2024', num: 'Ata 01', titulo: '1ª Reunião CEDEM — 2024',
         data: 'jan/2024', duracao: '00:20:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2024/ata-no-1-2024-reuniao-cedm/@@display-file/file/Ata_012024_-_PAE_92882023.pdf',
         pauta: [
         'Desistência de beneficiário e encaminhamentos decorrentes'
@@ -2254,7 +2254,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 01', titulo: '1ª Reunião CEDEM — 2023',
+        ano: '2023', num: 'Ata 01', titulo: '1ª Reunião CEDEM — 2023',
         data: 'jul/2023', duracao: '00:15:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2023/ata-no-1-2023-reuniao-cedm/@@display-file/file/Ata_012023_-_PAE_112042020.pdf',
         pauta: [
         'Habilitações em editais de desfazimento'
@@ -2264,7 +2264,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 02', titulo: '2ª Reunião CEDEM — 2023',
+        ano: '2023', num: 'Ata 02', titulo: '2ª Reunião CEDEM — 2023',
         data: 'jul/2023', duracao: '00:15:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2023/ata-no-2-2023-reuniao-cedm/@@display-file/file/Ata_022023_-_PAE_45992021.pdf',
         pauta: [
         'Habilitações em editais de desfazimento'
@@ -2274,7 +2274,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 03', titulo: '3ª Reunião CEDEM — 2023',
+        ano: '2023', num: 'Ata 03', titulo: '3ª Reunião CEDEM — 2023',
         data: 'dez/2023', duracao: '00:40:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2023/ata-no-3-2023-reuniao-cedm/@@display-file/file/Ata_032023_-_PAE_92882023.pdf',
         pauta: [
         'Destinação de materiais diversos'
@@ -2284,7 +2284,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2022.0', num: 'Ata 05', titulo: '5ª Reunião CEDEM — 2022',
+        ano: '2022', num: 'Ata 05', titulo: '5ª Reunião CEDEM — 2022',
         data: 'mar/2022', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2022/ata-no-05-2022-reuniao-com-saof/@@display-file/file/Ata%2520n%25C2%25BA%252005_2022%2520_%2520Reuniao%2520com%2520SAOF.pdf',
         pauta: [
         'Desfazimento de veículos e bens de TI (2ª etapa)',
@@ -2299,7 +2299,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 17', titulo: '17ª Reunião CEDEM — 2021',
+        ano: '2021', num: 'Ata 17', titulo: '17ª Reunião CEDEM — 2021',
         data: 'out/2021', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2021/ata-no-17-2021-reuniao-com-a-cedm-22-10-2021/@@display-file/file/Ata%2520n%25C2%25BA%252017_2021%2520-%2520Reuni%25C3%25A3o%2520com%2520a%2520CEDM_22_10_2021.pdf',
         pauta: [
         'Desfazimento de materiais',
@@ -2311,7 +2311,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 18', titulo: '18ª Reunião CEDEM — 2021',
+        ano: '2021', num: 'Ata 18', titulo: '18ª Reunião CEDEM — 2021',
         data: 'nov/2021', duracao: '00:35:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2021/ata-no-18-2021-reuniao-com-a-cedm-processos-de-desfazimento-de-bens-16-11-2021/@@display-file/file/Ata%2520n%25C2%25BA%252018_2021%2520-%2520Reuni%25C3%25A3o%2520com%2520a%2520CEDM%2520-%2520Processos%2520de%2520desfazimento%2520de%2520bens_16_11_2021.pdf',
         pauta: [
         'Desfazimento de materiais',
@@ -2325,13 +2325,13 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2020', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2019.0', num: 'Ata 01', titulo: '1ª Reunião CEDEM — 2019',
+        ano: '2019', num: 'Ata 01', titulo: '1ª Reunião CEDEM — 2019',
         data: 'mar/2019', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/atas/2019/tre-rn-ata-de-reuniao-n-01-2019-cedm/@@display-file/file/TRE-RN-Ata%2520de%2520Reuni%25C3%25A3o%2520n%25C2%25B0%252001-CEDM.pdf',
         pauta: [
         'Habilitações em editais de desfazimento (veículos)'
@@ -2344,7 +2344,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 02', titulo: '2ª Reunião CEDEM — 2019',
+        ano: '2019', num: 'Ata 02', titulo: '2ª Reunião CEDEM — 2019',
         data: 'abr/2019', duracao: '02:30:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/editais/arquivos/2019/ata-de-reuniao-no-02-2019-cedm/@@display-file/file/Ata%2520de%2520Reuni%25C3%25A3o%2520n%25C2%25BA%252002-2019-CEDM.pdf',
         pauta: [
         'Análise de processos de desfazimento (veículos e TI)',
@@ -2356,7 +2356,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 03', titulo: '3ª Reunião CEDEM — 2019',
+        ano: '2019', num: 'Ata 03', titulo: '3ª Reunião CEDEM — 2019',
         data: 'set/2019', duracao: '00:45:00', url: 'https://www.tre-rn.jus.br/institucional/governanca-e-gestao/gestao-patrimonial/comissao-especial-desfazimento-materiais/editais/arquivos/ata-de-reuniao-no-03-cedm/@@display-file/file/Ata%2520de%2520Reuni%25C3%25A3o%2520N%25C2%25BA%252003%2520-%2520CEDM.pdf',
         pauta: [
         'Análise de processo de desfazimento (diversos e TI) para a Aeronáutica'
@@ -2510,13 +2510,13 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2024.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2024', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CPET — 2025',
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CPET — 2025',
         data: 'dez/2025', duracao: '00:30:00', url: 'https://drive.google.com/file/d/14bLRAJ08Fwcar6E49M6zgO1HAXKkd7-n/view',
         pauta: [
         'Funcionamento da CPET baseado no Programa de Integridade e no novo Código de Ética e Conduta'
@@ -2524,7 +2524,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2026.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2026', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -2587,13 +2587,13 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2024.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2024', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CEAAD1 — 2025',
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CEAAD1 — 2025',
         data: 'fev/2025', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/comissoes-de-enfrentamento-ao-assedio-moral-assedio-sexual-e-discriminacao/atas/tre-rn-ata-1-2025-reuniao-inaugural/@@display-file/file/tre-rn%2520ata%25201-2025%2520-%2520reuniao%2520inaugural.pdf',
         pauta: [
         'Plano de ações 2025: capacitação, campanha e pesquisa sobre assédio',
@@ -2605,13 +2605,13 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2025.0', num: 'Ata 01a', titulo: 'Avaliação de caso concreto (sigiloso)',
+        ano: '2025', num: 'Ata 01a', titulo: 'Avaliação de caso concreto (sigiloso)',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 02', titulo: 'Avaliação de caso concreto (sigiloso)',
+        ano: '2025', num: 'Ata 02', titulo: 'Avaliação de caso concreto (sigiloso)',
         data: '—', duracao: null, url: null,
         pauta: [
         'Acolhimento de denúncia de situação de assédio moral (SIGILOSO)'
@@ -2619,7 +2619,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 03', titulo: 'Avaliação de caso concreto (sigiloso)',
+        ano: '2025', num: 'Ata 03', titulo: 'Avaliação de caso concreto (sigiloso)',
         data: '—', duracao: null, url: null,
         pauta: [
         'Deliberações e encaminhamentos sobre denuncia de assédio (SIGILOSO)'
@@ -2627,7 +2627,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2026.0', num: 'Ata 01', titulo: '1ª Reunião CEAAD1 — 2026',
+        ano: '2026', num: 'Ata 01', titulo: '1ª Reunião CEAAD1 — 2026',
         data: 'mar/2026', duracao: '01:25:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/comissoes-de-enfrentamento-ao-assedio-moral-assedio-sexual-e-discriminacao/atas/ata-1-2026/@@display-file/file/SEI_2482141_Ata_de_reuniao_1%2520%25282%2529.pdf',
         pauta: [
         'Apresentação do relatório de atividades 2025',
@@ -2723,19 +2723,19 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2024.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2024', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2025.0', num: '—', titulo: 'Não houve reunião no período',
+        ano: '2025', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CEAAD2 — 2026',
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CEAAD2 — 2026',
         data: 'mar/2026', duracao: '01:25:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/comissoes-de-enfrentamento-ao-assedio-moral-assedio-sexual-e-discriminacao/atas/ata-1-2026/@@display-file/file/SEI_2482141_Ata_de_reuniao_1%2520%25282%2529.pdf',
         pauta: [
         'Apresentação do relatório de atividades 2025',
@@ -2797,13 +2797,13 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2026.0', num: 'Ata 01', titulo: 'Atividades encerradas (nova comissão: CPEGD)',
+        ano: '2026', num: 'Ata 01', titulo: 'Atividades encerradas (nova comissão: CPEGD)',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2025',
+        ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2025',
         data: 'fev/2025', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-gestao/arquivos/sei_1999580_ata_de_reuniao_2/@@display-file/file/SEI_1999580_Ata_de_reuniao_2.pdf',
         pauta: [
         'Planejamento das ações 2025'
@@ -2813,7 +2813,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2024.0', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2024',
+        ano: '2024', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2024',
         data: 'mar/2024', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/governanca-gestao/arquivos/sei_1734910_ata_de_reuniao_1/@@display-file/file/SEI_1734910_Ata_de_reuniao_1.pdf',
         pauta: [
         'Planejamento das ações 2024'
@@ -2823,7 +2823,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2023',
+        ano: '2023', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2023',
         data: 'abr/2023', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2023/ata-1-2023/@@display-file/file/ataFinalizadaReuniao-ASCOM-1-2023.pdf',
         pauta: [
         'Planejamento das ações 2023'
@@ -2833,7 +2833,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2023',
+        ano: '2023', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2023',
         data: 'jun/2025', duracao: '00:50:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2023/ascom_ata_02_assinado-1-_assinado-assinado/@@display-file/file/ASCOM_Ata_02_assinado%255B1%255D_assinado-Assinado.pdf',
         pauta: [
         'Planejamento de ação sobre a presença da mulher negra no espaço político'
@@ -2843,7 +2843,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 03', titulo: '3ª Reunião CPFEM — 2023',
+        ano: '2023', num: 'Ata 03', titulo: '3ª Reunião CPFEM — 2023',
         data: 'jul/2023', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2023/ascom_ata_03_assinado-1-_assinado-assinado/@@display-file/file/ASCOM_Ata_03_assinado%255B1%255D_assinado-Assinado.pdf',
         pauta: [
         'Resposta à AUDI: Ação coordenada de auditoria sobre a política contra assédio e discriminação do PJ'
@@ -2853,7 +2853,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 04', titulo: '4ª Reunião CPFEM — 2023',
+        ano: '2023', num: 'Ata 04', titulo: '4ª Reunião CPFEM — 2023',
         data: 'ago/2023', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2023/ascom_ata_04_assinado-1-_assinado-assinado/@@display-file/file/ASCOM_Ata_04_assinado%255B1%255D_assinado-Assinado.pdf',
         pauta: [
         'Planejamento de ação na Comunidade Indígena do Amarelão'
@@ -2863,7 +2863,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2023.0', num: 'Ata 05', titulo: '5ª Reunião CPFEM — 2023',
+        ano: '2023', num: 'Ata 05', titulo: '5ª Reunião CPFEM — 2023',
         data: 'set/2023', duracao: '00:30:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2023/ascom_ata_05_assinado-1-_assinado-assinado/@@display-file/file/ASCOM_Ata_05_assinado%255B1%255D_assinado-Assinado.pdf',
         pauta: [
         'Calendário de evento na Comunidade Indígena do Amarelão'
@@ -2873,7 +2873,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2022.0', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2022',
+        ano: '2022', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2022',
         data: 'mar/2022', duracao: '00:50:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2022/ascom-ata-01/@@display-file/file/ASCOM%2520Ata%252001.pdf',
         pauta: [
         'Alinhamento de atividades e metas para 2022'
@@ -2883,7 +2883,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2022.0', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2022',
+        ano: '2022', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2022',
         data: 'abr/2022', duracao: '00:50:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2022/ascom-ata-02/@@display-file/file/ASCOM%2520Ata%252002.pdf',
         pauta: [
         'Planejamento das ações 2022'
@@ -2893,7 +2893,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2022.0', num: 'Ata 03', titulo: '3ª Reunião CPFEM — 2022',
+        ano: '2022', num: 'Ata 03', titulo: '3ª Reunião CPFEM — 2022',
         data: 'abr/2022', duracao: '00:50:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2022/ascom-ata-03/@@display-file/file/ASCOM%2520Ata%252003.pdf',
         pauta: [
         'Ajustes da ação conjunta com a ABMCJ'
@@ -2903,7 +2903,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2022.0', num: 'Ata 04', titulo: '4ª Reunião CPFEM — 2022',
+        ano: '2022', num: 'Ata 04', titulo: '4ª Reunião CPFEM — 2022',
         data: 'nov/2022', duracao: '01:40:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2022/ata-04-2022-_participacao-feminina-retomada-dos-trabalhos-em-2022/@@display-file/file/Ata%252004-2022%2520_Participa%25C3%25A7%25C3%25A3o%2520feminina%2520-%2520retomada%2520dos%2520trabalhos%2520em%25202022_%2520_1_.pdf',
         pauta: [
         'Diretrizes para o plano de ação 2022/2023'
@@ -2913,7 +2913,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2021',
+        ano: '2021', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2021',
         data: 'jan/2021', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2021/ata-no-01-2021-planejamento-acoes-2021/@@display-file/file/TRE-RN-ata-01-2021-planejamento-acoes-2021.pdf',
         pauta: [
         'Ajustes na ação [LIVE] A Balança da Justiça: relatos de conquistas femininas no judiciário eleitoral potiguar'
@@ -2923,7 +2923,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2021',
+        ano: '2021', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2021',
         data: 'fev/2021', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2021/ata-no-2-2021-planejamento-de-acoes-ii/@@display-file/file/TRE-RN-ata-02-2021-planejar-acoes-2021-b.pdf',
         pauta: [
         'Ajustes das atividades e metas da comissão para 2021'
@@ -2935,7 +2935,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2021.0', num: 'Ata 06', titulo: '6ª Reunião CPFEM — 2021',
+        ano: '2021', num: 'Ata 06', titulo: '6ª Reunião CPFEM — 2021',
         data: 'out/2021', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2020/ata-06-2020-planejamento-3o-quadrimestre/@@display-file/file/TRE-RN-ata-06-2020-planejamento-3%25C2%25BA%2520quadrimestre.pdf',
         pauta: [
         'Análise de proposta de Plano de Ação'
@@ -2945,7 +2945,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2020',
+        ano: '2020', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2020',
         data: 'fev/2020', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2020/ata-no-01-2020-reuniao-inicial-1636058125053/@@display-file/file/TRE-RN-ata-01-2020-reuni%25C3%25A3o-inicial.pdf',
         pauta: [
         'Reunião inicial do ano'
@@ -2955,7 +2955,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2020',
+        ano: '2020', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2020',
         data: 'fev/2020', duracao: '00:55:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2020/ata-no-02-2020-validacao-e-detalhamento-de-acoes/@@display-file/file/TRE-RN-ata-02-2020-validacao-e-detalhamento-de-acoes.pdf',
         pauta: [
         'Detalhamento de ações para 2020'
@@ -2966,7 +2966,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: 'Ata 03', titulo: '3ª Reunião CPFEM — 2020',
+        ano: '2020', num: 'Ata 03', titulo: '3ª Reunião CPFEM — 2020',
         data: 'abr/2020', duracao: '02:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2020/ata-no-03-2020-validacao-de-plano-de-trabalho/@@display-file/file/TRE-RN-ata-03-2021-apresenta%25C3%25A7%25C3%25A3o-de-equipe-e-planejamentos.PDF',
         pauta: [],
         delib: [
@@ -2974,7 +2974,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: 'Ata 04', titulo: '4ª Reunião CPFEM — 2020',
+        ano: '2020', num: 'Ata 04', titulo: '4ª Reunião CPFEM — 2020',
         data: 'jul/2020', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2020/ata-04-2020-plano-de-trabalho/@@display-file/file/TRE-RN-ata-%252004-2020-novas-acoes-2020-plano-de-trabalho.pdf',
         pauta: [
         'Adequação do plano de trabalho 2020 (pandemia COVID-19)'
@@ -2985,7 +2985,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: 'Ata 05', titulo: '5ª Reunião CPFEM — 2020',
+        ano: '2020', num: 'Ata 05', titulo: '5ª Reunião CPFEM — 2020',
         data: 'ago/2020', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2020/ata-no-05-2020-validacao-do-relatorio-do-cnj/@@display-file/file/TRE-RN-ata-05-2020-valida%25C3%25A7%25C3%25A3o-relat%25C3%25B3rio-do-cnj.pdf',
         pauta: [
         'Relatório do CNJ'
@@ -2995,7 +2995,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2020.0', num: 'Ata 06', titulo: '6ª Reunião CPFEM — 2020',
+        ano: '2020', num: 'Ata 06', titulo: '6ª Reunião CPFEM — 2020',
         data: 'out/2020', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2020/ata-no-06-2020-planejamento-3o-quadrimestre/@@display-file/file/TRE-RN-ata-06-2020-planejamento-3%25C2%25BA%2520quadrimestreok.pdf',
         pauta: [
         'Planejamento 3º quadrimestre 2020'
@@ -3005,7 +3005,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2019',
+        ano: '2019', num: 'Ata 01', titulo: '1ª Reunião CPFEM — 2019',
         data: 'jul/2019', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2019/ata-01-2019-reuniao-inicial-definicao-de-acoes-pdf/@@display-file/file/Ata%252001-2019%2520%2528reuni%25C3%25A3o%2520inicial%2520-%2520defini%25C3%25A7%25C3%25A3o%2520de%2520a%25C3%25A7%25C3%25B5es%2529.pdf',
         pauta: [
         'Reunião inicial do ano: definição de ações'
@@ -3015,7 +3015,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2019',
+        ano: '2019', num: 'Ata 02', titulo: '2ª Reunião CPFEM — 2019',
         data: 'ago/2019', duracao: '01:15:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2019/ata-02-2019-programacao-roda-de-mulheres-pdf/@@display-file/file/Ata%252002-2019%2520%2528programa%25C3%25A7%25C3%25A3o%2520-%2520Roda%2520de%2520Mulheres%2529.pdf',
         pauta: [
         'Programação de evento do ano: Roda de Mulheres'
@@ -3025,7 +3025,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 03', titulo: '3ª Reunião CPFEM — 2019',
+        ano: '2019', num: 'Ata 03', titulo: '3ª Reunião CPFEM — 2019',
         data: 'ago/2019', duracao: '01:10:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2019/ata-03-2019-programacao-roda-de-mulheres-pdf/@@display-file/file/Ata%252003-2019%2520%2528programa%25C3%25A7%25C3%25A3o%2520-%2520Roda%2520de%2520Mulheres%2529.pdf',
         pauta: [
         'Organização do evento  Roda de Mulheres (continuação)'
@@ -3035,7 +3035,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 04', titulo: '4ª Reunião CPFEM — 2019',
+        ano: '2019', num: 'Ata 04', titulo: '4ª Reunião CPFEM — 2019',
         data: 'ago/2019', duracao: '00:25:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2019/ata-04-2019-distribuicao-de-tarefas-roda-de-mulheres-pdf/@@display-file/file/Ata%252004-2019%2520%2528distribui%25C3%25A7%25C3%25A3o%2520de%2520tarefas%2520-%2520Roda%2520de%2520Mulheres%2529.pdf',
         pauta: [
         'Preparação do evento Roda de Mulheres (distribuição de tarefas)'
@@ -3045,7 +3045,7 @@ const COMISSOES = [
       ]
       },
       {
-        ano: '2019.0', num: 'Ata 05', titulo: '5ª Reunião CPFEM — 2019',
+        ano: '2019', num: 'Ata 05', titulo: '5ª Reunião CPFEM — 2019',
         data: 'ago/2019', duracao: '00:30:00', url: 'https://www.tre-rn.jus.br/institucional/programas-institucionais/programa-de-participacao-feminina/arquivos/atas/2019/ata-05-2019-avaliacao-do-evento-pdf/@@display-file/file/Ata%252005-2019%2520%2528avalia%25C3%25A7%25C3%25A3o%2520do%2520evento%2529.pdf',
         pauta: [
         'Avaliação do evento Roda de Mulheres'
@@ -3292,19 +3292,19 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2026.0', num: '—', titulo: 'Atividades encerradas (nova comissão: CPEGD)',
+        ano: '2026', num: '—', titulo: 'Atividades encerradas (nova comissão: CPEGD)',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '',
+        ano: '2025', num: 'Ata 01', titulo: '',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
       },
       {
-        ano: '2024.0', num: 'Ata 01', titulo: '',
+        ano: '2024', num: 'Ata 01', titulo: '',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
