@@ -36,7 +36,8 @@
     #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;padding:14px 16px 56px;}
     .card{background:var(--branco);border-radius:var(--raio-g);box-shadow:var(--sombra);overflow:hidden;display:flex;transition:box-shadow .2s,transform .18s;text-decoration:none;color:inherit;}
     .card:hover{box-shadow:var(--sombra-hover);transform:translateY(-2px);}
-    .card-esq{width:76px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 10px;gap:0;}
+    .card-esq{width:76px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 10px;gap:0;transition:filter .15s;}
+    .card-esq:hover{filter:brightness(1.12);}
     .card-sigla{font-size:14px;font-weight:900;letter-spacing:.12em;color:rgba(255,255,255,.98);text-align:center;line-height:1.2;text-transform:uppercase;}
     .card-div{display:none;}
     .card-membros-num{display:none;}
@@ -223,12 +224,12 @@ function renderCards(lista){
     <div class="card"
          data-busca="${esc(c.nome)} ${esc(c.sigla)} ${esc(c.area)} ${(c.composicao||[]).map(m=>m.membro).join(' ')}"
          data-area="${esc(c.area)}">
-      <div class="card-esq" style="background:#4a6d8c">
+      <a class="card-esq" href="comissao.html?id=${c.id}" style="background:#4a6d8c;text-decoration:none;cursor:pointer" title="Ver detalhes da ${esc(c.sigla)}">
         <div class="card-sigla">${esc(c.sigla)}</div>
         <div class="card-div"></div>
         <div class="card-membros-num">${c.membros_total??'—'}</div>
         <div class="card-membros-lbl">membros</div>
-      </div>
+      </a>
       <div class="card-dir">
         <div class="card-nome-faixa" style="background:var(--azul-fundo)">
           <div class="card-nome">${esc(c.nome)}</div>
