@@ -845,6 +845,11 @@ function trocarAba(id, btn) {
   btn.classList.add('ativa');
   document.getElementById(`aba-${id}`).classList.add('ativa');
   if (id === 'calendario' && comAtual) { calState = { ano: new Date().getFullYear(), mes: new Date().getMonth() }; renderCalDias(comAtual); }
+  if (id === 'deliberacoes' && comAtual) {
+    // Garantir que a lista seja renderizada ao entrar na aba
+    const filtAtual = (_filtroAtivo[comAtual.id] || {}).status || 'todos';
+    filtrarDelibs(comAtual.id, filtAtual);
+  }
 }
 
 function renderCalendario(c) {
