@@ -139,9 +139,14 @@ const COMISSOES = [
     atas: [
       {
         ano: '2026', num: 'Ata 01', titulo: '1ª Reunião CGPLS — 2026',
-        data: 'fev/2026', duracao: null, url: null,
-        pauta: [],
-        delib: []
+        data: 'fev/2026', duracao: '01:30:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/sustentabilidade/sustentabilidade/atas/ata-1-2026/@@display-file/file/SEI_2482924_Ata_de_reuniao_1%2520%25281%2529.pdf',
+        pauta: [
+        'Relatório de Desempenho 2025',
+        'Validação de metas e ações PLS 2026'
+      ],
+        delib: [
+        { txt: 'APROVADO — Relatório 2025 e propostas de metas e ações para 2026', status: 'cumprida' }
+      ]
       },
       {
         ano: '2025', num: 'Ata 05', titulo: '5ª Reunião CGPLS — 2025',
@@ -737,9 +742,14 @@ const COMISSOES = [
     atas: [
       {
         ano: '2026', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2026',
-        data: 'mar/2026', duracao: null, url: null,
-        pauta: [],
-        delib: []
+        data: 'mar/2026', duracao: '03:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/acessibilidade/copy_of_acessibilidade-e-inclusao/atas-cacess-2026/ata-1-2026-cacess/@@display-file/file/SEI_2479558_Ata_de_reuniao_1.pdf',
+        pauta: [
+        'Relatório de atividades 2025',
+        'Planejamento preliminar das ações 2026'
+      ],
+        delib: [
+        { txt: 'APROVADO — Ações preliminares propostas e prazo para os integrantes sugerirem novas ações', status: 'cumprida' }
+      ]
       },
       {
         ano: '2025', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2025',
@@ -787,16 +797,6 @@ const COMISSOES = [
         { txt: 'Inclusão no orçamento 2024 de projetos executivos para acessibilidade física', status: 'informativa' },
         { txt: 'Dificuldades de atualização do cadastro de servidores PCD', status: 'informativa' },
         { txt: 'APROVADO — Ampliação do projeto Coordenador de Acessibilidade 2024, por adesão', status: 'cumprida' }
-      ]
-      },
-      {
-        ano: '2022.0', num: 'Ata 01', titulo: '1ª Reunião CACESS — 2022',
-        data: 'jan/2022', duracao: '01:30:00', url: null,
-        pauta: [
-        'Plano de ação para atendimento à auditoria de acessibilidade digital'
-      ],
-        delib: [
-        { txt: 'Ações para cumprimento de auditoria em acessibilidade digital', status: 'informativa' }
       ]
       },
       {
@@ -952,14 +952,12 @@ const COMISSOES = [
 
     proximas: [
       {
-        titulo: '1ª Reunião CACESS — 2026', data: '2026-04-25',
-        horario: '10:00', duracao: '01:30',
+        titulo: '1ª Reunião CACESS — 2026', data: '2026-03-11',
+        horario: '08:15:00', duracao: '03:00:00',
         local: 'TRE-RN — Sala AGE',
         pauta: [
-        'Direcionamento anual dos trabalhos 2026',
-        'Elaboração do PA 2026',
-        'Acompanhamento da campanha anti-assédio (pendência 2024)',
-        'Cronograma anual de reuniões'
+        'Relatório das atividades 2024',
+        'Planejamento inicial das atividades 2025'
       ]
       },
       {
@@ -993,14 +991,6 @@ const COMISSOES = [
         'Consultoria de acessibilidade física',
         'Atualização de cadastro PCD',
         'Ampliação do projeto Coordenador de Acessibilidade 2024'
-      ]
-      },
-      {
-        titulo: '1ª Reunião CACESS — 2022', data: '2021-01-23',
-        horario: '09:30:00', duracao: '01:30:00',
-        local: 'Videoconferência',
-        pauta: [
-        'Plano de ação para atendimento à auditoria de acessibilidade digital'
       ]
       },
       {
@@ -1159,7 +1149,7 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2026.0', num: '—', titulo: 'Não houve reunião até o momento (março)',
+        ano: '2026.0', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -1293,7 +1283,7 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2026', num: '—', titulo: 'Não houve reunião até o momento (março)',
+        ano: '2026', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -1575,8 +1565,8 @@ const COMISSOES = [
 
     proximas: [
       {
-        titulo: '1ª Reunião CPSI — 2026', data: '',
-        horario: '', duracao: null,
+        titulo: '1ª Reunião CPSI — 2026', data: '2026-03-26',
+        horario: '09:00:00', duracao: '01:00:00',
         local: 'Videoconferência',
         pauta: []
       },
@@ -1890,12 +1880,6 @@ const COMISSOES = [
 
     proximas: [
       {
-        titulo: 'Dados a confirmar', data: '',
-        horario: '', duracao: null,
-        local: '',
-        pauta: []
-      },
-      {
         titulo: '1ª Reunião CPAD — 2025', data: '2025-02-02',
         horario: '15:00:00', duracao: '02:00:00',
         local: 'TRE-RN — Sala de videoconferência',
@@ -2033,7 +2017,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2026.0', num: '—', titulo: 'Não houve reunião até o momento (março)',
+        ano: '2026.0', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -2146,7 +2130,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2026', num: '—', titulo: 'Não houve reunião até o momento (março)',
+        ano: '2026', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -2234,7 +2218,7 @@ const COMISSOES = [
 
     atas: [
       {
-        ano: '2026', num: '—', titulo: 'Não houve reunião até o momento (março)',
+        ano: '2026', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -2540,7 +2524,7 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2026.0', num: '—', titulo: 'Não houve reunião até o momento (março)',
+        ano: '2026.0', num: '—', titulo: 'Não houve reunião no período',
         data: '—', duracao: null, url: null,
         pauta: [],
         delib: []
@@ -2560,11 +2544,11 @@ const COMISSOES = [
   },
 
   /* ══════════════════════════════════════════════════
-     CEAAD1 — Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 2º Grau
+     CEAAD2 — Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 2º Grau
   ══════════════════════════════════════════════════ */
   {
-    id: 'ceaad1',
-    sigla: 'CEAAD1',
+    id: 'ceaad2',
+    sigla: 'CEAAD2',
     nome: 'Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 2º Grau',
     area: 'Presidência',
     cor: '#7c2d12',
@@ -2612,18 +2596,18 @@ const COMISSOES = [
         ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CEAAD1 — 2025',
         data: 'fev/2025', duracao: '01:00:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/comissoes-de-enfrentamento-ao-assedio-moral-assedio-sexual-e-discriminacao/atas/tre-rn-ata-1-2025-reuniao-inaugural/@@display-file/file/tre-rn%2520ata%25201-2025%2520-%2520reuniao%2520inaugural.pdf',
         pauta: [
-        'Plano de ações 2025: capacitação, campanha e pesquisa sobre assédio'
+        'Plano de ações 2025: capacitação, campanha e pesquisa sobre assédio',
+        'Avaliação de caso concreto de assédio (SIGILOSO)'
       ],
         delib: [
+        { txt: 'APROVADO — Planejamento da Semana de Combate a Assédio (maio)', status: 'cumprida' },
         { txt: 'APROVADO — Plano de ações 2025 (capacitação, campanha e pesquisa) e reuniões periódicas de acompanhamento das ações', status: 'cumprida' }
       ]
       },
       {
         ano: '2025.0', num: 'Ata 01a', titulo: 'Avaliação de caso concreto (sigiloso)',
         data: '—', duracao: null, url: null,
-        pauta: [
-        'Avaliação de caso concreto de assédio (SIGILOSO)'
-      ],
+        pauta: [],
         delib: []
       },
       {
@@ -2643,16 +2627,28 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2026.0', num: 'Ata 01', titulo: '',
-        data: '—', duracao: null, url: null,
-        pauta: [],
+        ano: '2026.0', num: 'Ata 01', titulo: '1ª Reunião CEAAD1 — 2026',
+        data: 'mar/2026', duracao: '01:25:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/comissoes-de-enfrentamento-ao-assedio-moral-assedio-sexual-e-discriminacao/atas/ata-1-2026/@@display-file/file/SEI_2482141_Ata_de_reuniao_1%2520%25282%2529.pdf',
+        pauta: [
+        'Apresentação do relatório de atividades 2025',
+        'Planejamento das ações 2026'
+      ],
         delib: []
       }
     ],
 
     proximas: [
       {
-        titulo: '1ª Reunião CEAAD1 — 2025', data: '2025-02-27',
+        titulo: '1ª Reunião CEAAD2 — 2026', data: '2026-03-27',
+        horario: '10:00:00', duracao: '01:25:00',
+        local: 'Videoconferência',
+        pauta: [
+        'Relatório de ativdades 2025',
+        'Planejamento da Semana de Combate ao Assédio e Discriminação (maio)'
+      ]
+      },
+      {
+        titulo: '1ª Reunião CEAAD2 — 2025', data: '2025-02-27',
         horario: '14:30:00', duracao: '01:00:00',
         local: 'Videoconferência',
         pauta: [
@@ -2662,7 +2658,7 @@ const COMISSOES = [
       ]
       },
       {
-        titulo: '2ª Reunião CEAAD1 — 2025', data: '',
+        titulo: '2ª Reunião CEAAD2 — 2025', data: '',
         horario: '', duracao: null,
         local: 'Videoconferência',
         pauta: [
@@ -2670,8 +2666,8 @@ const COMISSOES = [
       ]
       },
       {
-        titulo: '3ª Reunião CEAAD1 — 2025', data: '',
-        horario: '', duracao: null,
+        titulo: '3ª Reunião CEAAD2 — 2025', data: '2026-03-27',
+        horario: '10:00:00', duracao: '01:25:00',
         local: 'Videoconferência',
         pauta: [
         'Deliberações e encaminhamentos sobre denuncia de assédio (SIGILOSO)'
@@ -2681,11 +2677,11 @@ const COMISSOES = [
   },
 
   /* ══════════════════════════════════════════════════
-     CEADD2 — Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 1º Grau
+     CEADD1 — Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 1º Grau
   ══════════════════════════════════════════════════ */
   {
-    id: 'ceaad2',
-    sigla: 'CEADD2',
+    id: 'ceaad1',
+    sigla: 'CEADD1',
     nome: 'Comissão de Enfrentamento ao Assédio Moral, Assédio Sexual e Discriminação 1º Grau',
     area: 'Presidência',
     cor: '#b45309',
@@ -2739,19 +2735,25 @@ const COMISSOES = [
         delib: []
       },
       {
-        ano: '2025.0', num: 'Ata 01', titulo: '',
-        data: '—', duracao: null, url: null,
-        pauta: [],
+        ano: '2025.0', num: 'Ata 01', titulo: '1ª Reunião CEAAD2 — 2026',
+        data: 'mar/2026', duracao: '01:25:00', url: 'https://www.tre-rn.jus.br/transparencia-e-prestacao-de-contas/audiencias-e-sessoes-1/comissoes-permanentes/comissoes-de-enfrentamento-ao-assedio-moral-assedio-sexual-e-discriminacao/atas/ata-1-2026/@@display-file/file/SEI_2482141_Ata_de_reuniao_1%2520%25282%2529.pdf',
+        pauta: [
+        'Apresentação do relatório de atividades 2025',
+        'Planejamento das ações 2026'
+      ],
         delib: []
       }
     ],
 
     proximas: [
       {
-        titulo: '', data: '',
-        horario: '', duracao: null,
-        local: '',
-        pauta: []
+        titulo: '1ª Reunião CEAAD1 — 2026', data: '2025-02-27',
+        horario: '14:30:00', duracao: '01:00:00',
+        local: 'Videoconferência',
+        pauta: [
+        'Relatório de ativdades 2025',
+        'Planejamento da Semana de Combate ao Assédio e Discriminação (maio)'
+      ]
       }
     ]
   },
@@ -3309,48 +3311,10 @@ const COMISSOES = [
       }
     ],
 
-    proximas: [
-      {
-        titulo: '', data: '',
-        horario: '', duracao: null,
-        local: '',
-        pauta: []
-      },
-      {
-        titulo: '', data: '',
-        horario: '', duracao: null,
-        local: '',
-        pauta: []
-      }
-    ]
+    proximas: []
   },
 
 ];
-
-/**
- * Retorna o status efetivo de uma deliberação.
- * Deliberações "em_andamento" ou "informativa" de anos anteriores
- * são automaticamente promovidas para "cumprida".
- */
-function statusEfetivo(delib) {
-  if ((delib.status === 'em_andamento' || delib.status === 'informativa') && delib.ano < ANO_ATUAL) {
-    return 'cumprida';
-  }
-  return delib.status;
-}
-
-/**
- * Retorna as deliberações pendentes de uma comissão (para pauta sugerida).
- */
-function getPendencias(com) {
-  const pend = [];
-  (com.atas || []).forEach(a => {
-    (a.delib || []).forEach(d => {
-      if (statusEfetivo(d) === 'pendente') pend.push(d.txt);
-    });
-  });
-  return [...new Set(pend)];
-}
 
 /**
  * Converte duração 'hh:mm' em minutos. Retorna 0 se inválido.
