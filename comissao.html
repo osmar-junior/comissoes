@@ -629,6 +629,7 @@ function renderAtas(c) {
   const anosHtml = anosOrd.map(ano => {
     const atas    = porAno[ano];
     const isCor   = ano === anoCor;
+    const atasReais = atas.filter(a => a.num && a.num !== '—' && a.num !== '');
     const nPend   = atas.reduce((s,a)=>s+(a.delib||[]).filter(d=>d.status==='pendente').length, 0);
     const ordemSt = {cumprida:0, informativa:1, pendente:2};
 
@@ -667,7 +668,7 @@ function renderAtas(c) {
       <div class="ano-card-header${isCor?'':' colapsado'}" onclick="toggleAno('${cardId}')">
         <span class="ano-num${isCor?' corrente':''}">${ano}</span>
         <div class="ano-badges">
-          <span class="ano-badge">${atas.length} ${atas.length===1?'reunião':'reuniões'}</span>
+          <span class="ano-badge${atasReais.length===0?' pend':''}">${atasReais.length===0?'sem reuniões':atasReais.length+' '+(atasReais.length===1?'reunião':'reuniões')}</span>
           ${nPend ? `<span class="ano-badge pend">⚠ ${nPend} pendente${nPend>1?'s':''}</span>` : ''}
         </div>
         <div class="ano-seta">▼</div>
